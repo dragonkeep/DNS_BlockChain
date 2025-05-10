@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="200" height="240" viewBox="0 0 200 240">
+
+  <!-- 背景六边形链环：蓝色 -->
+  <polygon points="50,20 150,20 180,100 150,180 50,180 20,100"
+           fill="none" stroke="#0066CC" stroke-width="10" stroke-linejoin="round"/>
+
+  <!-- 旋转60°的六边形链环：绿色 -->
+  <polygon points="50,20 150,20 180,100 150,180 50,180 20,100"
+           transform="rotate(60 100 100)"
+           fill="none" stroke="#00CC66" stroke-width="10" stroke-linejoin="round"/>
+
+  <!-- 中心网络节点 -->
+  <g fill="#0066CC">
+    <circle cx="100" cy="100" r="12"/>
+    <circle cx="100" cy="50" r="8"/>
+    <circle cx="150" cy="100" r="8"/>
+    <circle cx="100" cy="150" r="8"/>
+    <circle cx="50"  cy="100" r="8"/>
+  </g>
+  <g stroke="#0066CC" stroke-width="4" stroke-linecap="round">
+    <line x1="100" y1="100" x2="100" y2="50"/>
+    <line x1="100" y1="100" x2="150" y2="100"/>
+    <line x1="100" y1="100" x2="100" y2="150"/>
+    <line x1="100" y1="100" x2="50"  y2="100"/>
+  </g>
+
+  <!-- 文本标识 -->
+  <text x="100" y="220" font-family="Helvetica, Arial, sans-serif"
+        font-size="32" font-weight="bold"
+        fill="#333333" text-anchor="middle">DNS</text>
+</svg>
