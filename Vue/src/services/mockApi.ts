@@ -1,181 +1,266 @@
-// 模拟区块链DNS API服务
-import { ref } from 'vue';
+// 区块链DNS API服务
 
-// 模拟数据
-const dnsRecords = ref([
-  {
-    hostname: 'example.com',
-    ip: '192.168.1.100',
-    port: 80,
-    lease_expiry: Math.floor(Date.now() / 1000) + 31536000, // 当前时间 + 1年（秒）
-    blockchain_type: 'DNS链'
-  },
-  {
-    hostname: 'test.com',
-    ip: '192.168.1.200',
-    port: 443,
-    lease_expiry: Math.floor(Date.now() / 1000) + 63072000, // 当前时间 + 2年（秒）
-    blockchain_type: 'DNS链'
-  },
-  {
-    hostname: 'blockchain.org',
-    ip: '192.168.1.50',
-    port: 8080,
-    lease_expiry: Math.floor(Date.now() / 1000) + 94608000, // 当前时间 + 3年（秒）
-    blockchain_type: '注册链'
-  }
-]);
-
-// 模拟区块链状态
-const dnsBlockchain = ref({
-  length: 3,
-  current_transactions: [
-    { type: 'register', hostname: 'newdomain.com', timestamp: Date.now() / 1000 }
-  ],
-  chain: [
-    {
-      index: 1,
-      timestamp: Math.floor(Date.now() / 1000) - 86400 * 3,
-      transactions: [
-        { type: 'register', hostname: 'example.com', ip: '192.168.1.100', port: 80 }
-      ],
-      hash: '0x1a2b3c4d5e6f'
-    },
-    {
-      index: 2,
-      timestamp: Math.floor(Date.now() / 1000) - 86400 * 2,
-      transactions: [
-        { type: 'register', hostname: 'test.com', ip: '192.168.1.200', port: 443 }
-      ],
-      hash: '0x2b3c4d5e6f7g'
-    },
-    {
-      index: 3,
-      timestamp: Math.floor(Date.now() / 1000) - 86400,
-      transactions: [
-        { type: 'register', hostname: 'blockchain.org', ip: '192.168.1.50', port: 8080 }
-      ],
-      hash: '0x3c4d5e6f7g8h'
-    }
-  ]
-});
-
-const registerBlockchain = ref({
-  length: 2,
-  current_transactions: [],
-  chain: [
-    {
-      index: 1,
-      timestamp: Math.floor(Date.now() / 1000) - 86400 * 2,
-      transactions: [
-        { type: 'token_issue', amount: 100, recipient: 'User1' }
-      ],
-      hash: '0x7g8h9i0j1k2l'
-    },
-    {
-      index: 2,
-      timestamp: Math.floor(Date.now() / 1000) - 86400,
-      transactions: [
-        { type: 'token_transfer', amount: 10, sender: 'User1', recipient: 'User2' }
-      ],
-      hash: '0x8h9i0j1k2l3m'
-    }
-  ]
-});
-
-// 模拟API函数
+const API_BASE_URL = 'http://127.0.0.1:5173';
+// API函数
 export const mockApi = {
-  // 查询域名
-  async resolveDomain(hostname: string) {
-    // 模拟网络延迟
-    await new Promise(resolve => setTimeout(resolve, 500));
-    
-    const record = dnsRecords.value.find(r => r.hostname === hostname);
-    
-    if (record) {
-      return { success: true, ...record };
-    } else {
+  // 查询域名 - 使用XMLHttpRequest避免循环调用
+  async resolveDomain(hostname: any) {
+    try {
+      // 使用XMLHttpRequest避免被apiInterceptor拦截
+      return new Promise((resolve, reject) => {
+        const xhr = new XMLHttpRequest();
+        xhr.open('POST', `${API_BASE_URL}/dns/request`);
+        xhr.setRequestHeader('Content-Type', 'application/json');
+        xhr.onload = function() {
+          if (xhr.status >= 200 && xhr.status < 300) {
+            const data = JSON.parse(xhr.responseText);
+            resolve({ success: true, hostname, ip: data.ip, port: data.port });
+          } else {
+            reject(new Error('域名未找到'));
+          }
+        };
+        xhr.onerror = function() {
+          reject(new Error('域名未找到'));
+        };
+        xhr.send(JSON.stringify({ hostname }));
+      });
+    } catch (error) {
+      console.error('查询域名错误:', error);
       throw new Error('域名未找到');
     }
   },
-  
-  // 注册域名
-  async registerDomain(data: { hostname: string, ip: string, port: number, lease_years: number }) {
-    // 模拟网络延迟
-    await new Promise(resolve => setTimeout(resolve, 800));
-    
-    // 检查域名是否已存在
-    if (dnsRecords.value.some(r => r.hostname === data.hostname)) {
-      throw new Error('域名已被注册');
+
+  // 创建钱包
+  async createWallet() {
+    try {
+      const response = await fetch(`${API_BASE_URL}/wallet/create`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
+      
+      if (!response.ok) {
+        throw new Error('创建钱包失败');
+      }
+      
+      return await response.json();
+    } catch (error) {
+      console.error('创建钱包错误:', error);
+      throw error;
     }
-    
-    // 创建新记录
-    const newRecord = {
-      hostname: data.hostname,
-      ip: data.ip,
-      port: data.port,
-      lease_expiry: Math.floor(Date.now() / 1000) + (data.lease_years * 31536000),
-      blockchain_type: 'DNS链'
-    };
-    
-    // 添加到记录中
-    dnsRecords.value.push(newRecord);
-    
-    // 添加交易到区块链
-    dnsBlockchain.value.current_transactions.push({
-      type: 'register',
-      hostname: data.hostname,
-      timestamp: Math.floor(Date.now() / 1000)
-    });
-    
-    return { success: true, message: `域名 ${data.hostname} 注册成功！` };
   },
   
-  // 添加DNS记录
-  async addDnsRecord(data: { entry: { hostname: string, ip: string, port: number } }) {
-    // 模拟网络延迟
-    await new Promise(resolve => setTimeout(resolve, 600));
-    
-    // 检查域名是否已存在
-    if (dnsRecords.value.some(r => r.hostname === data.entry.hostname)) {
-      throw new Error('域名已存在');
+  // 导入钱包
+  async importWallet(data: any) {
+    try {
+      const response = await fetch(`${API_BASE_URL}/wallet/import`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      });
+      
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.error || '导入钱包失败');
+      }
+      
+      return await response.json();
+    } catch (error) {
+      console.error('导入钱包错误:', error);
+      throw error;
     }
-    
-    // 创建新记录
-    const newRecord = {
-      hostname: data.entry.hostname,
-      ip: data.entry.ip,
-      port: data.entry.port,
-      lease_expiry: Math.floor(Date.now() / 1000) + 31536000, // 默认1年
-      blockchain_type: 'DNS链'
-    };
-    
-    // 添加到记录中
-    dnsRecords.value.push(newRecord);
-    
-    // 添加交易到区块链
-    dnsBlockchain.value.current_transactions.push({
-      type: 'add_record',
-      hostname: data.entry.hostname,
-      timestamp: Math.floor(Date.now() / 1000)
-    });
-    
-    return { success: true, message: `DNS记录 ${data.entry.hostname} 添加成功！` };
   },
   
-  // 获取区块链状态
+  // 获取钱包信息
+  async getWalletInfo(address: string) {
+    try {
+      const response = await fetch(`${API_BASE_URL}/wallet/info/${address}`);
+      
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.error || '获取钱包信息失败');
+      }
+      
+      return await response.json();
+    } catch (error) {
+      console.error('获取钱包信息错误:', error);
+      throw error;
+    }
+  },
+  
+  // 注册域名 - 使用XMLHttpRequest避免循环调用
+  async registerDomain(data:any) {
+    try {
+      // 使用XMLHttpRequest避免被apiInterceptor拦截
+      return new Promise((resolve, reject) => {
+        const xhr = new XMLHttpRequest();
+        xhr.open('POST', `${API_BASE_URL}/dns/register`);
+        xhr.setRequestHeader('Content-Type', 'application/json');
+        xhr.onload = function() {
+          if (xhr.status >= 200 && xhr.status < 300) {
+            resolve(JSON.parse(xhr.responseText));
+          } else {
+            try {
+              const errorData = JSON.parse(xhr.responseText);
+              reject(new Error(errorData.error || '注册域名失败'));
+            } catch (e) {
+              reject(new Error('注册域名失败'));
+            }
+          }
+        };
+        xhr.onerror = function() {
+          reject(new Error('注册域名失败'));
+        };
+        xhr.send(JSON.stringify({
+          hostname: data.hostname,
+          ip: data.ip,
+          port: data.port,
+          lease_years: data.lease_years
+        }));
+      });
+    } catch (error) {
+      console.error('注册域名错误:', error);
+      throw error;
+    }
+  },
+  
+  // 添加DNS记录 - 使用XMLHttpRequest避免循环调用，并统一数据结构
+  async addDnsRecord(data: any) {
+    try {
+      // 使用XMLHttpRequest避免被apiInterceptor拦截
+      return new Promise((resolve, reject) => {
+        const xhr = new XMLHttpRequest();
+        xhr.open('POST', `${API_BASE_URL}/dns/new`);
+        xhr.setRequestHeader('Content-Type', 'application/json');
+        xhr.onload = function() {
+          if (xhr.status >= 200 && xhr.status < 300) {
+            resolve(JSON.parse(xhr.responseText));
+          } else {
+            try {
+              const errorData = JSON.parse(xhr.responseText);
+              reject(new Error(errorData.error || '添加DNS记录失败'));
+            } catch (e) {
+              reject(new Error('添加DNS记录失败'));
+            }
+          }
+        };
+        xhr.onerror = function() {
+          reject(new Error('添加DNS记录失败'));
+        };
+        
+        // 统一使用指定的数据结构格式
+        const payload = {
+          entry: {
+            hostname: data.entry.hostname,
+            type: data.entry.type,
+            value: data.entry.value,
+            ip: data.entry.ip,      
+            port: data.entry.port, 
+            wallet_address: data.entry.wallet_address || ''
+          }
+        };
+        
+        xhr.send(JSON.stringify(payload));
+      });
+    } catch (error) {
+      console.error('添加DNS记录错误:', error);
+      throw error;
+    }
+  },
+  
+  // 获取区块链状态 - 使用原始fetch避免循环调用
   async getBlockchainStatus() {
-    // 模拟网络延迟
-    await new Promise(resolve => setTimeout(resolve, 700));
-    
-    return dnsBlockchain.value;
+    try {
+      // 使用原始XMLHttpRequest避免被apiInterceptor拦截
+      return new Promise((resolve, reject) => {
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', `${API_BASE_URL}/nodes/chain?type=dns`);
+        xhr.onload = function() {
+          if (xhr.status >= 200 && xhr.status < 300) {
+            resolve(JSON.parse(xhr.responseText));
+          } else {
+            reject(new Error('获取区块链状态失败'));
+          }
+        };
+        xhr.onerror = function() {
+          reject(new Error('获取区块链状态失败'));
+        };
+        xhr.send();
+      });
+    } catch (error) {
+      console.error('获取区块链状态错误:', error);
+      throw error;
+    }
   },
   
-  // 获取注册区块链状态
+  // 获取注册区块链状态 - 使用原始fetch避免循环调用
   async getRegisterBlockchainStatus() {
-    // 模拟网络延迟
-    await new Promise(resolve => setTimeout(resolve, 700));
-    
-    return registerBlockchain.value;
+    try {
+      // 使用原始XMLHttpRequest避免被apiInterceptor拦截
+      return new Promise((resolve, reject) => {
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', `${API_BASE_URL}/nodes/chain?type=register`);
+        xhr.onload = function() {
+          if (xhr.status >= 200 && xhr.status < 300) {
+            resolve(JSON.parse(xhr.responseText));
+          } else {
+            reject(new Error('获取注册区块链状态失败'));
+          }
+        };
+        xhr.onerror = function() {
+          reject(new Error('获取注册区块链状态失败'));
+        };
+        xhr.send();
+      });
+    } catch (error) {
+      console.error('获取注册区块链状态错误:', error);
+      throw error;
+    }
+  },
+  
+  // 获取代币余额
+  async getTokenBalance(nodeId: string) {
+    try {
+      const response = await fetch(`${API_BASE_URL}/tokens/balance?node_id=${nodeId}`);
+      
+      if (!response.ok) {
+        throw new Error('获取代币余额失败');
+      }
+      
+      return await response.json();
+    } catch (error) {
+      console.error('获取代币余额错误:', error);
+      throw error;
+    }
+  },
+  
+  // 转账代币
+  async transferTokens(fromNode: string, toNode: string, amount: number) {
+    try {
+      const response = await fetch(`${API_BASE_URL}/tokens/transfer`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          from_node: fromNode,
+          to_node: toNode,
+          amount: amount
+        })
+      });
+      
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.error || '转账失败');
+      }
+      
+      return await response.json();
+    } catch (error) {
+      console.error('转账错误:', error);
+      throw error;
+    }
   }
 };

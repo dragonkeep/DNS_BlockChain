@@ -1,15 +1,17 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg"
-     width="200" height="240" viewBox="0 0 200 240">
+     width="400" height="480" viewBox="0 0 200 240"
+     shape-rendering="geometricPrecision" text-rendering="optimizeLegibility">
 
   <!-- 背景六边形链环：蓝色 -->
   <polygon points="50,20 150,20 180,100 150,180 50,180 20,100"
-           fill="none" stroke="#0066CC" stroke-width="10" stroke-linejoin="round"/>
+           fill="none" stroke="#0066CC" stroke-width="10"
+           stroke-linejoin="round" shape-rendering="crispEdges"/>
 
   <!-- 旋转60°的六边形链环：绿色 -->
   <polygon points="50,20 150,20 180,100 150,180 50,180 20,100"
            transform="rotate(60 100 100)"
-           fill="none" stroke="#00CC66" stroke-width="10" stroke-linejoin="round"/>
+           fill="none" stroke="#00CC66" stroke-width="10"
+           stroke-linejoin="round" shape-rendering="crispEdges"/>
 
   <!-- 中心网络节点 -->
   <g fill="#0066CC">

@@ -1,1 +1,2950 @@
-{"entry0": {"hostname": "https://duffy.com/", "ip": "65.24.142.187", "port": 1689}, "entry1": {"hostname": "http://brown.biz/", "ip": "172.165.49.174", "port": 3003}, "entry2": {"hostname": "https://cole.net/", "ip": "212.45.62.76", "port": 443}, "entry3": {"hostname": "http://wyatt.com/", "ip": "39.113.57.113", "port": 1049}, "entry4": {"hostname": "https://robinson.com/", "ip": "143.182.181.194", "port": 751}, "entry5": {"hostname": "https://jones.com/", "ip": "89.167.84.109", "port": 1627}, "entry6": {"hostname": "http://sanchez-brown.com/", "ip": "158.101.134.30", "port": 10}, "entry7": {"hostname": "https://davis.com/", "ip": "28.17.248.36", "port": 804}, "entry8": {"hostname": "http://jones-johnston.biz/", "ip": "11.49.94.211", "port": 3035}, "entry9": {"hostname": "https://www.garcia.net/", "ip": "140.185.27.128", "port": 328}, "entry10": {"hostname": "https://valencia-silva.net/", "ip": "16.212.76.205", "port": 1814}, "entry11": {"hostname": "http://www.bennett-ramirez.net/", "ip": "25.216.221.238", "port": 923}, "entry12": {"hostname": "https://www.rios-valdez.com/", "ip": "123.248.97.90", "port": 178}, "entry13": {"hostname": "https://www.lewis.biz/", "ip": "48.41.160.125", "port": 1924}, "entry14": {"hostname": "http://www.dunlap.com/", "ip": "253.135.54.124", "port": 4855}, "entry15": {"hostname": "http://www.walker.com/", "ip": "102.242.118.214", "port": 4866}, "entry16": {"hostname": "http://miller.com/", "ip": "51.29.161.104", "port": 3188}, "entry17": {"hostname": "http://ruiz-stephens.info/", "ip": "76.80.73.31", "port": 4844}, "entry18": {"hostname": "http://jones.com/", "ip": "246.197.174.7", "port": 1841}, "entry19": {"hostname": "http://www.miller-ayers.com/", "ip": "80.48.200.74", "port": 1424}, "entry20": {"hostname": "http://www.parker-diaz.com/", "ip": "101.85.207.151", "port": 1354}, "entry21": {"hostname": "https://rodgers.biz/", "ip": "153.237.205.150", "port": 2278}, "entry22": {"hostname": "http://www.davidson-white.com/", "ip": "61.183.120.198", "port": 4693}, "entry23": {"hostname": "http://ward-gonzalez.com/", "ip": "100.8.219.21", "port": 729}, "entry24": {"hostname": "http://rose.info/", "ip": "45.129.53.219", "port": 4720}, "entry25": {"hostname": "http://www.andrade-parrish.com/", "ip": "174.66.167.209", "port": 4704}, "entry26": {"hostname": "http://www.yoder.com/", "ip": "239.26.88.9", "port": 3096}, "entry27": {"hostname": "http://allen-pearson.com/", "ip": "203.189.145.170", "port": 4617}, "entry28": {"hostname": "http://www.meza.com/", "ip": "208.83.45.133", "port": 236}, "entry29": {"hostname": "http://www.wheeler.com/", "ip": "155.222.2.241", "port": 4136}, "entry30": {"hostname": "https://www.martin.com/", "ip": "197.31.119.158", "port": 1998}, "entry31": {"hostname": "https://www.washington.com/", "ip": "49.64.31.125", "port": 680}, "entry32": {"hostname": "https://www.johnston.com/", "ip": "235.242.27.156", "port": 251}, "entry33": {"hostname": "http://rivera.net/", "ip": "82.245.194.81", "port": 1879}, "entry34": {"hostname": "https://www.hunt.biz/", "ip": "216.129.80.114", "port": 619}, "entry35": {"hostname": "https://hays.info/", "ip": "101.128.25.109", "port": 4885}, "entry36": {"hostname": "https://www.ramirez.com/", "ip": "216.173.249.48", "port": 1549}, "entry37": {"hostname": "http://www.bryant.biz/", "ip": "10.181.76.194", "port": 4195}, "entry38": {"hostname": "https://www.schneider.com/", "ip": "56.243.162.139", "port": 4242}, "entry39": {"hostname": "http://www.clark-johnson.info/", "ip": "239.34.127.24", "port": 607}, "entry40": {"hostname": "http://booth.com/", "ip": "44.104.101.83", "port": 2412}, "entry41": {"hostname": "https://davis-peck.biz/", "ip": "189.210.165.123", "port": 2870}, "entry42": {"hostname": "http://martinez.org/", "ip": "251.25.80.23", "port": 877}, "entry43": {"hostname": "https://shaffer-garrett.com/", "ip": "94.22.213.150", "port": 3802}, "entry44": {"hostname": "http://www.davis-ford.biz/", "ip": "153.206.188.3", "port": 3299}, "entry45": {"hostname": "http://good.info/", "ip": "103.31.108.4", "port": 2843}, "entry46": {"hostname": "http://wilson-flowers.info/", "ip": "187.200.88.241", "port": 998}, "entry47": {"hostname": "http://www.lopez.biz/", "ip": "67.135.229.177", "port": 4771}, "entry48": {"hostname": "https://www.anderson-williams.net/", "ip": "222.112.17.215", "port": 1430}, "entry49": {"hostname": "https://www.phillips.info/", "ip": "176.36.161.100", "port": 154}, "entry50": {"hostname": "https://www.martin-lee.com/", "ip": "142.213.42.201", "port": 1222}, "entry51": {"hostname": "https://www.williams.com/", "ip": "167.77.38.215", "port": 1881}, "entry52": {"hostname": "http://www.sullivan.com/", "ip": "248.137.169.14", "port": 970}, "entry53": {"hostname": "https://www.lowe-parsons.com/", "ip": "141.243.192.153", "port": 2597}, "entry54": {"hostname": "http://rubio.biz/", "ip": "35.209.36.234", "port": 1972}, "entry55": {"hostname": "http://www.dunn.info/", "ip": "49.40.11.205", "port": 1690}, "entry56": {"hostname": "http://www.johnston.biz/", "ip": "6.223.70.137", "port": 3505}, "entry57": {"hostname": "http://johnson.com/", "ip": "117.105.238.49", "port": 3177}, "entry58": {"hostname": "http://www.perez.com/", "ip": "26.33.5.53", "port": 2386}, "entry59": {"hostname": "http://gonzalez-green.com/", "ip": "224.224.128.208", "port": 1550}, "entry60": {"hostname": "https://www.taylor.com/", "ip": "166.74.223.246", "port": 1014}, "entry61": {"hostname": "http://www.pruitt-simon.com/", "ip": "54.226.168.105", "port": 4555}, "entry62": {"hostname": "https://young.biz/", "ip": "206.252.231.47", "port": 807}, "entry63": {"hostname": "https://coffey.com/", "ip": "87.128.87.193", "port": 3215}, "entry64": {"hostname": "https://www.callahan.com/", "ip": "220.88.6.72", "port": 4851}, "entry65": {"hostname": "http://small.com/", "ip": "136.11.41.166", "port": 2733}, "entry66": {"hostname": "http://butler.biz/", "ip": "94.255.246.138", "port": 1735}, "entry67": {"hostname": "http://johnston-fletcher.net/", "ip": "187.36.88.155", "port": 1378}, "entry68": {"hostname": "http://adams-barnett.info/", "ip": "204.24.216.213", "port": 3199}, "entry69": {"hostname": "http://www.jackson.com/", "ip": "78.130.209.153", "port": 2681}, "entry70": {"hostname": "http://www.allen.com/", "ip": "239.148.21.227", "port": 3419}, "entry71": {"hostname": "https://www.rodriguez.info/", "ip": "53.55.158.16", "port": 3213}, "entry72": {"hostname": "http://lane.info/", "ip": "184.11.0.1", "port": 1364}, "entry73": {"hostname": "http://www.west.com/", "ip": "9.105.126.173", "port": 1971}, "entry74": {"hostname": "https://howard.net/", "ip": "185.46.78.242", "port": 4223}, "entry75": {"hostname": "https://www.gutierrez.com/", "ip": "252.138.103.77", "port": 2205}, "entry76": {"hostname": "http://mitchell-johnson.com/", "ip": "248.108.135.137", "port": 1149}, "entry77": {"hostname": "http://www.haynes.com/", "ip": "74.201.217.239", "port": 551}, "entry78": {"hostname": "http://grant.com/", "ip": "245.253.193.177", "port": 1128}, "entry79": {"hostname": "http://washington.com/", "ip": "176.15.247.182", "port": 2740}, "entry80": {"hostname": "https://mullen.com/", "ip": "23.27.105.10", "port": 933}, "entry81": {"hostname": "http://www.neal.com/", "ip": "225.37.251.29", "port": 2885}, "entry82": {"hostname": "http://valdez-jones.com/", "ip": "55.108.226.202", "port": 3580}, "entry83": {"hostname": "https://forbes.com/", "ip": "87.35.74.113", "port": 2374}, "entry84": {"hostname": "https://palmer-lane.com/", "ip": "56.192.60.83", "port": 4572}, "entry85": {"hostname": "https://bowman-arias.net/", "ip": "162.255.50.161", "port": 2132}, "entry86": {"hostname": "http://www.lopez.net/", "ip": "255.19.104.19", "port": 178}, "entry87": {"hostname": "https://www.chavez.com/", "ip": "90.77.2.123", "port": 1864}, "entry88": {"hostname": "https://rodriguez-gibson.com/", "ip": "45.145.81.49", "port": 4765}, "entry89": {"hostname": "https://lowe.org/", "ip": "216.103.29.121", "port": 3800}, "entry90": {"hostname": "https://www.rubio-williamson.biz/", "ip": "173.30.159.6", "port": 646}, "entry91": {"hostname": "https://www.bautista-david.biz/", "ip": "185.9.216.59", "port": 3099}, "entry92": {"hostname": "https://moreno.com/", "ip": "19.163.138.149", "port": 4720}, "entry93": {"hostname": "https://murray.info/", "ip": "218.197.105.87", "port": 4104}, "entry94": {"hostname": "http://www.howard-pratt.com/", "ip": "133.88.16.234", "port": 353}, "entry95": {"hostname": "http://www.garcia.com/", "ip": "108.105.253.244", "port": 3817}, "entry96": {"hostname": "https://simmons.com/", "ip": "199.180.51.180", "port": 2541}, "entry97": {"hostname": "https://shields-villarreal.com/", "ip": "80.128.238.29", "port": 2069}, "entry98": {"hostname": "http://www.brooks.com/", "ip": "146.12.216.33", "port": 3377}, "entry99": {"hostname": "https://www.johnson-wood.com/", "ip": "223.255.251.4", "port": 2205}}
+[
+  {
+    "host": "brown-lindsey.com",
+    "type": "A",
+    "value": "164.31.2.12"
+  },
+  {
+    "host": "brown-lindsey.com",
+    "type": "NS",
+    "value": "ns3.brown-lindsey.com"
+  },
+  {
+    "host": "brown-lindsey.com",
+    "type": "TXT",
+    "value": "Ea repudiandae asperiores. Illum neque sed eveniet natus unde nostrum."
+  },
+  {
+    "host": "brown-lindsey.com",
+    "type": "NS",
+    "value": "ns3.brown-lindsey.com"
+  },
+  {
+    "host": "brown-lindsey.com",
+    "type": "MX",
+    "value": [
+      "mx5.brown-lindsey.com",
+      5
+    ]
+  },
+  {
+    "host": "brown-lindsey.com",
+    "type": "SOA",
+    "value": [
+      "ns1.brown-lindsey.com",
+      "admin.brown-lindsey.com"
+    ]
+  },
+  {
+    "host": "lee-young.com",
+    "type": "A",
+    "value": "108.173.254.44"
+  },
+  {
+    "host": "lee-young.com",
+    "type": "CNAME",
+    "value": "alias-jones.com"
+  },
+  {
+    "host": "lee-young.com",
+    "type": "NS",
+    "value": "ns3.lee-young.com"
+  },
+  {
+    "host": "lee-young.com",
+    "type": "SOA",
+    "value": [
+      "ns1.lee-young.com",
+      "admin.lee-young.com"
+    ]
+  },
+  {
+    "host": "lee.com",
+    "type": "A",
+    "value": "28.17.248.36"
+  },
+  {
+    "host": "lee.com",
+    "type": "TXT",
+    "value": "Cupiditate aperiam esse eum enim itaque quos culpa."
+  },
+  {
+    "host": "lee.com",
+    "type": "CNAME",
+    "value": "alias-hernandez-lyons.info"
+  },
+  {
+    "host": "lee.com",
+    "type": "SOA",
+    "value": [
+      "ns1.lee.com",
+      "admin.lee.com"
+    ]
+  },
+  {
+    "host": "gentry.org",
+    "type": "A",
+    "value": "173.175.84.107"
+  },
+  {
+    "host": "gentry.org",
+    "type": "CNAME",
+    "value": "alias-jones.com"
+  },
+  {
+    "host": "gentry.org",
+    "type": "TXT",
+    "value": "Rem sapiente ipsam voluptas. Ex laboriosam necessitatibus facilis asperiores excepturi."
+  },
+  {
+    "host": "gentry.org",
+    "type": "SOA",
+    "value": [
+      "ns1.gentry.org",
+      "admin.gentry.org"
+    ]
+  },
+  {
+    "host": "myers.biz",
+    "type": "A",
+    "value": "50.21.9.199"
+  },
+  {
+    "host": "myers.biz",
+    "type": "CNAME",
+    "value": "alias-thompson-lewis.net"
+  },
+  {
+    "host": "myers.biz",
+    "type": "CNAME",
+    "value": "alias-wallace-davis.com"
+  },
+  {
+    "host": "myers.biz",
+    "type": "TXT",
+    "value": "Repudiandae alias similique totam. Occaecati et assumenda quis nihil debitis modi."
+  },
+  {
+    "host": "myers.biz",
+    "type": "CNAME",
+    "value": "alias-roberts.com"
+  },
+  {
+    "host": "myers.biz",
+    "type": "SOA",
+    "value": [
+      "ns1.myers.biz",
+      "admin.myers.biz"
+    ]
+  },
+  {
+    "host": "anderson.info",
+    "type": "A",
+    "value": "76.206.80.220"
+  },
+  {
+    "host": "anderson.info",
+    "type": "CNAME",
+    "value": "alias-mejia.info"
+  },
+  {
+    "host": "anderson.info",
+    "type": "NS",
+    "value": "ns2.anderson.info"
+  },
+  {
+    "host": "anderson.info",
+    "type": "CNAME",
+    "value": "alias-wilson.info"
+  },
+  {
+    "host": "anderson.info",
+    "type": "MX",
+    "value": [
+      "mx9.anderson.info",
+      9
+    ]
+  },
+  {
+    "host": "anderson.info",
+    "type": "SOA",
+    "value": [
+      "ns1.anderson.info",
+      "admin.anderson.info"
+    ]
+  },
+  {
+    "host": "zimmerman.com",
+    "type": "A",
+    "value": "235.242.27.156"
+  },
+  {
+    "host": "zimmerman.com",
+    "type": "CNAME",
+    "value": "alias-mills-copeland.com"
+  },
+  {
+    "host": "zimmerman.com",
+    "type": "NS",
+    "value": "ns1.zimmerman.com"
+  },
+  {
+    "host": "zimmerman.com",
+    "type": "TXT",
+    "value": "Facere provident dolore iure repellat occaecati. Minus quaerat aspernatur quia."
+  },
+  {
+    "host": "zimmerman.com",
+    "type": "SOA",
+    "value": [
+      "ns1.zimmerman.com",
+      "admin.zimmerman.com"
+    ]
+  },
+  {
+    "host": "booth.org",
+    "type": "A",
+    "value": "83.1.121.72"
+  },
+  {
+    "host": "booth.org",
+    "type": "CNAME",
+    "value": "alias-scott-phillips.org"
+  },
+  {
+    "host": "booth.org",
+    "type": "TXT",
+    "value": "Cumque sed officia doloribus quod."
+  },
+  {
+    "host": "booth.org",
+    "type": "SOA",
+    "value": [
+      "ns1.booth.org",
+      "admin.booth.org"
+    ]
+  },
+  {
+    "host": "thompson.com",
+    "type": "A",
+    "value": "103.52.42.255"
+  },
+  {
+    "host": "thompson.com",
+    "type": "MX",
+    "value": [
+      "mx8.thompson.com",
+      8
+    ]
+  },
+  {
+    "host": "thompson.com",
+    "type": "CNAME",
+    "value": "alias-jones-hernandez.com"
+  },
+  {
+    "host": "thompson.com",
+    "type": "SOA",
+    "value": [
+      "ns1.thompson.com",
+      "admin.thompson.com"
+    ]
+  },
+  {
+    "host": "crawford-perez.biz",
+    "type": "A",
+    "value": "251.25.80.23"
+  },
+  {
+    "host": "crawford-perez.biz",
+    "type": "TXT",
+    "value": "Cupiditate esse fuga sapiente maxime. Rerum modi illo."
+  },
+  {
+    "host": "crawford-perez.biz",
+    "type": "TXT",
+    "value": "Tempore mollitia harum. Molestiae delectus ea aperiam qui quas."
+  },
+  {
+    "host": "crawford-perez.biz",
+    "type": "MX",
+    "value": [
+      "mx13.crawford-perez.biz",
+      13
+    ]
+  },
+  {
+    "host": "crawford-perez.biz",
+    "type": "NS",
+    "value": "ns3.crawford-perez.biz"
+  },
+  {
+    "host": "crawford-perez.biz",
+    "type": "SOA",
+    "value": [
+      "ns1.crawford-perez.biz",
+      "admin.crawford-perez.biz"
+    ]
+  },
+  {
+    "host": "noble.com",
+    "type": "A",
+    "value": "167.77.38.215"
+  },
+  {
+    "host": "noble.com",
+    "type": "TXT",
+    "value": "Veniam facilis modi impedit dolorum. Deserunt harum dolorem doloremque quis minus nemo."
+  },
+  {
+    "host": "noble.com",
+    "type": "NS",
+    "value": "ns3.noble.com"
+  },
+  {
+    "host": "noble.com",
+    "type": "TXT",
+    "value": "Eveniet explicabo corporis corporis laboriosam voluptates amet. Eum voluptatem quidem earum."
+  },
+  {
+    "host": "noble.com",
+    "type": "SOA",
+    "value": [
+      "ns1.noble.com",
+      "admin.noble.com"
+    ]
+  },
+  {
+    "host": "garcia.com",
+    "type": "A",
+    "value": "187.38.53.234"
+  },
+  {
+    "host": "garcia.com",
+    "type": "MX",
+    "value": [
+      "mx17.garcia.com",
+      17
+    ]
+  },
+  {
+    "host": "garcia.com",
+    "type": "TXT",
+    "value": "Neque ex nulla ex. Neque velit laboriosam perspiciatis. Nemo numquam et eius eius quas."
+  },
+  {
+    "host": "garcia.com",
+    "type": "CNAME",
+    "value": "alias-butler.biz"
+  },
+  {
+    "host": "garcia.com",
+    "type": "MX",
+    "value": [
+      "mx7.garcia.com",
+      7
+    ]
+  },
+  {
+    "host": "garcia.com",
+    "type": "SOA",
+    "value": [
+      "ns1.garcia.com",
+      "admin.garcia.com"
+    ]
+  },
+  {
+    "host": "miller.com",
+    "type": "A",
+    "value": "204.24.216.213"
+  },
+  {
+    "host": "miller.com",
+    "type": "CNAME",
+    "value": "alias-ward.com"
+  },
+  {
+    "host": "miller.com",
+    "type": "MX",
+    "value": [
+      "mx18.miller.com",
+      18
+    ]
+  },
+  {
+    "host": "miller.com",
+    "type": "TXT",
+    "value": "Minima numquam eius velit eos tempora repellat. Sit sequi repudiandae numquam."
+  },
+  {
+    "host": "miller.com",
+    "type": "CNAME",
+    "value": "alias-soto-montgomery.net"
+  },
+  {
+    "host": "miller.com",
+    "type": "SOA",
+    "value": [
+      "ns1.miller.com",
+      "admin.miller.com"
+    ]
+  },
+  {
+    "host": "munoz.com",
+    "type": "A",
+    "value": "25.243.80.223"
+  },
+  {
+    "host": "munoz.com",
+    "type": "CNAME",
+    "value": "alias-lee-waller.com"
+  },
+  {
+    "host": "munoz.com",
+    "type": "MX",
+    "value": [
+      "mx16.munoz.com",
+      16
+    ]
+  },
+  {
+    "host": "munoz.com",
+    "type": "NS",
+    "value": "ns3.munoz.com"
+  },
+  {
+    "host": "munoz.com",
+    "type": "MX",
+    "value": [
+      "mx5.munoz.com",
+      5
+    ]
+  },
+  {
+    "host": "munoz.com",
+    "type": "SOA",
+    "value": [
+      "ns1.munoz.com",
+      "admin.munoz.com"
+    ]
+  },
+  {
+    "host": "mitchell-johnson.com",
+    "type": "A",
+    "value": "74.201.217.239"
+  },
+  {
+    "host": "mitchell-johnson.com",
+    "type": "TXT",
+    "value": "Voluptates eveniet fugit ipsam."
+  },
+  {
+    "host": "mitchell-johnson.com",
+    "type": "NS",
+    "value": "ns2.mitchell-johnson.com"
+  },
+  {
+    "host": "mitchell-johnson.com",
+    "type": "TXT",
+    "value": "Consectetur dolorem optio. Voluptatum facilis vitae.\nIure tempore animi exercitationem voluptate."
+  },
+  {
+    "host": "mitchell-johnson.com",
+    "type": "SOA",
+    "value": [
+      "ns1.mitchell-johnson.com",
+      "admin.mitchell-johnson.com"
+    ]
+  },
+  {
+    "host": "peterson.com",
+    "type": "A",
+    "value": "25.179.90.187"
+  },
+  {
+    "host": "peterson.com",
+    "type": "CNAME",
+    "value": "alias-lynch.biz"
+  },
+  {
+    "host": "peterson.com",
+    "type": "MX",
+    "value": [
+      "mx2.peterson.com",
+      2
+    ]
+  },
+  {
+    "host": "peterson.com",
+    "type": "SOA",
+    "value": [
+      "ns1.peterson.com",
+      "admin.peterson.com"
+    ]
+  },
+  {
+    "host": "palmer-lane.com",
+    "type": "A",
+    "value": "162.255.50.161"
+  },
+  {
+    "host": "palmer-lane.com",
+    "type": "TXT",
+    "value": "Deserunt incidunt minima eius. Eaque mollitia quibusdam nobis."
+  },
+  {
+    "host": "palmer-lane.com",
+    "type": "CNAME",
+    "value": "alias-bauer-walter.net"
+  },
+  {
+    "host": "palmer-lane.com",
+    "type": "MX",
+    "value": [
+      "mx2.palmer-lane.com",
+      2
+    ]
+  },
+  {
+    "host": "palmer-lane.com",
+    "type": "SOA",
+    "value": [
+      "ns1.palmer-lane.com",
+      "admin.palmer-lane.com"
+    ]
+  },
+  {
+    "host": "aguilar-parsons.com",
+    "type": "A",
+    "value": "5.3.171.25"
+  },
+  {
+    "host": "aguilar-parsons.com",
+    "type": "TXT",
+    "value": "Esse suscipit tenetur. Libero nisi aliquid maxime perspiciatis. Totam eaque dolore enim."
+  },
+  {
+    "host": "aguilar-parsons.com",
+    "type": "MX",
+    "value": [
+      "mx9.aguilar-parsons.com",
+      9
+    ]
+  },
+  {
+    "host": "aguilar-parsons.com",
+    "type": "SOA",
+    "value": [
+      "ns1.aguilar-parsons.com",
+      "admin.aguilar-parsons.com"
+    ]
+  },
+  {
+    "host": "powers-cunningham.biz",
+    "type": "A",
+    "value": "206.201.91.252"
+  },
+  {
+    "host": "powers-cunningham.biz",
+    "type": "NS",
+    "value": "ns3.powers-cunningham.biz"
+  },
+  {
+    "host": "powers-cunningham.biz",
+    "type": "TXT",
+    "value": "Dolor quas culpa iste expedita adipisci beatae. Autem exercitationem tenetur pariatur."
+  },
+  {
+    "host": "powers-cunningham.biz",
+    "type": "CNAME",
+    "value": "alias-long.org"
+  },
+  {
+    "host": "powers-cunningham.biz",
+    "type": "SOA",
+    "value": [
+      "ns1.powers-cunningham.biz",
+      "admin.powers-cunningham.biz"
+    ]
+  },
+  {
+    "host": "wells.com",
+    "type": "A",
+    "value": "223.165.100.66"
+  },
+  {
+    "host": "wells.com",
+    "type": "MX",
+    "value": [
+      "mx13.wells.com",
+      13
+    ]
+  },
+  {
+    "host": "wells.com",
+    "type": "CNAME",
+    "value": "alias-bailey.com"
+  },
+  {
+    "host": "wells.com",
+    "type": "MX",
+    "value": [
+      "mx6.wells.com",
+      6
+    ]
+  },
+  {
+    "host": "wells.com",
+    "type": "NS",
+    "value": "ns1.wells.com"
+  },
+  {
+    "host": "wells.com",
+    "type": "SOA",
+    "value": [
+      "ns1.wells.com",
+      "admin.wells.com"
+    ]
+  },
+  {
+    "host": "charles-smith.com",
+    "type": "A",
+    "value": "147.133.238.204"
+  },
+  {
+    "host": "charles-smith.com",
+    "type": "MX",
+    "value": [
+      "mx3.charles-smith.com",
+      3
+    ]
+  },
+  {
+    "host": "charles-smith.com",
+    "type": "MX",
+    "value": [
+      "mx6.charles-smith.com",
+      6
+    ]
+  },
+  {
+    "host": "charles-smith.com",
+    "type": "NS",
+    "value": "ns1.charles-smith.com"
+  },
+  {
+    "host": "charles-smith.com",
+    "type": "SOA",
+    "value": [
+      "ns1.charles-smith.com",
+      "admin.charles-smith.com"
+    ]
+  },
+  {
+    "host": "davila.com",
+    "type": "A",
+    "value": "71.180.141.20"
+  },
+  {
+    "host": "davila.com",
+    "type": "TXT",
+    "value": "Expedita debitis earum nulla molestiae."
+  },
+  {
+    "host": "davila.com",
+    "type": "TXT",
+    "value": "Ea laboriosam quasi dolorum quos quaerat. Alias quia deserunt laborum minima."
+  },
+  {
+    "host": "davila.com",
+    "type": "SOA",
+    "value": [
+      "ns1.davila.com",
+      "admin.davila.com"
+    ]
+  },
+  {
+    "host": "jennings-hensley.com",
+    "type": "A",
+    "value": "204.73.118.184"
+  },
+  {
+    "host": "jennings-hensley.com",
+    "type": "CNAME",
+    "value": "alias-dougherty-wood.com"
+  },
+  {
+    "host": "jennings-hensley.com",
+    "type": "MX",
+    "value": [
+      "mx12.jennings-hensley.com",
+      12
+    ]
+  },
+  {
+    "host": "jennings-hensley.com",
+    "type": "SOA",
+    "value": [
+      "ns1.jennings-hensley.com",
+      "admin.jennings-hensley.com"
+    ]
+  },
+  {
+    "host": "ramirez.com",
+    "type": "A",
+    "value": "13.236.20.222"
+  },
+  {
+    "host": "ramirez.com",
+    "type": "NS",
+    "value": "ns3.ramirez.com"
+  },
+  {
+    "host": "ramirez.com",
+    "type": "TXT",
+    "value": "Culpa enim omnis. Error consequatur assumenda enim magnam."
+  },
+  {
+    "host": "ramirez.com",
+    "type": "TXT",
+    "value": "Velit sapiente ex aliquam."
+  },
+  {
+    "host": "ramirez.com",
+    "type": "SOA",
+    "value": [
+      "ns1.ramirez.com",
+      "admin.ramirez.com"
+    ]
+  },
+  {
+    "host": "watts.net",
+    "type": "A",
+    "value": "39.29.237.166"
+  },
+  {
+    "host": "watts.net",
+    "type": "MX",
+    "value": [
+      "mx12.watts.net",
+      12
+    ]
+  },
+  {
+    "host": "watts.net",
+    "type": "MX",
+    "value": [
+      "mx11.watts.net",
+      11
+    ]
+  },
+  {
+    "host": "watts.net",
+    "type": "MX",
+    "value": [
+      "mx10.watts.net",
+      10
+    ]
+  },
+  {
+    "host": "watts.net",
+    "type": "SOA",
+    "value": [
+      "ns1.watts.net",
+      "admin.watts.net"
+    ]
+  },
+  {
+    "host": "gonzalez-howard.org",
+    "type": "A",
+    "value": "196.81.144.202"
+  },
+  {
+    "host": "gonzalez-howard.org",
+    "type": "NS",
+    "value": "ns3.gonzalez-howard.org"
+  },
+  {
+    "host": "gonzalez-howard.org",
+    "type": "TXT",
+    "value": "Voluptates veniam laboriosam vitae aliquid occaecati sed. Accusamus inventore odit quam."
+  },
+  {
+    "host": "gonzalez-howard.org",
+    "type": "NS",
+    "value": "ns2.gonzalez-howard.org"
+  },
+  {
+    "host": "gonzalez-howard.org",
+    "type": "CNAME",
+    "value": "alias-watkins.com"
+  },
+  {
+    "host": "gonzalez-howard.org",
+    "type": "SOA",
+    "value": [
+      "ns1.gonzalez-howard.org",
+      "admin.gonzalez-howard.org"
+    ]
+  },
+  {
+    "host": "rodgers-adkins.com",
+    "type": "A",
+    "value": "225.212.220.39"
+  },
+  {
+    "host": "rodgers-adkins.com",
+    "type": "TXT",
+    "value": "Ducimus modi hic perferendis."
+  },
+  {
+    "host": "rodgers-adkins.com",
+    "type": "NS",
+    "value": "ns3.rodgers-adkins.com"
+  },
+  {
+    "host": "rodgers-adkins.com",
+    "type": "SOA",
+    "value": [
+      "ns1.rodgers-adkins.com",
+      "admin.rodgers-adkins.com"
+    ]
+  },
+  {
+    "host": "gallegos.com",
+    "type": "A",
+    "value": "8.159.29.62"
+  },
+  {
+    "host": "gallegos.com",
+    "type": "TXT",
+    "value": "Voluptates laudantium explicabo. Rerum laborum consequuntur nam dolore."
+  },
+  {
+    "host": "gallegos.com",
+    "type": "NS",
+    "value": "ns2.gallegos.com"
+  },
+  {
+    "host": "gallegos.com",
+    "type": "SOA",
+    "value": [
+      "ns1.gallegos.com",
+      "admin.gallegos.com"
+    ]
+  },
+  {
+    "host": "moody-evans.com",
+    "type": "A",
+    "value": "88.100.69.199"
+  },
+  {
+    "host": "moody-evans.com",
+    "type": "TXT",
+    "value": "Eos laudantium officia fugit. Placeat sed expedita.\nDebitis porro quas saepe illo illum."
+  },
+  {
+    "host": "moody-evans.com",
+    "type": "CNAME",
+    "value": "alias-clark.com"
+  },
+  {
+    "host": "moody-evans.com",
+    "type": "NS",
+    "value": "ns1.moody-evans.com"
+  },
+  {
+    "host": "moody-evans.com",
+    "type": "CNAME",
+    "value": "alias-hughes-campbell.com"
+  },
+  {
+    "host": "moody-evans.com",
+    "type": "SOA",
+    "value": [
+      "ns1.moody-evans.com",
+      "admin.moody-evans.com"
+    ]
+  },
+  {
+    "host": "bailey.info",
+    "type": "A",
+    "value": "201.191.125.246"
+  },
+  {
+    "host": "bailey.info",
+    "type": "MX",
+    "value": [
+      "mx3.bailey.info",
+      3
+    ]
+  },
+  {
+    "host": "bailey.info",
+    "type": "MX",
+    "value": [
+      "mx9.bailey.info",
+      9
+    ]
+  },
+  {
+    "host": "bailey.info",
+    "type": "NS",
+    "value": "ns3.bailey.info"
+  },
+  {
+    "host": "bailey.info",
+    "type": "MX",
+    "value": [
+      "mx12.bailey.info",
+      12
+    ]
+  },
+  {
+    "host": "bailey.info",
+    "type": "SOA",
+    "value": [
+      "ns1.bailey.info",
+      "admin.bailey.info"
+    ]
+  },
+  {
+    "host": "bailey.info",
+    "type": "A",
+    "value": "21.20.203.52"
+  },
+  {
+    "host": "bailey.info",
+    "type": "MX",
+    "value": [
+      "mx14.bailey.info",
+      14
+    ]
+  },
+  {
+    "host": "bailey.info",
+    "type": "TXT",
+    "value": "Id illo et sed id sit. Unde vitae consequuntur. Neque commodi odio animi atque consectetur."
+  },
+  {
+    "host": "bailey.info",
+    "type": "SOA",
+    "value": [
+      "ns1.bailey.info",
+      "admin.bailey.info"
+    ]
+  },
+  {
+    "host": "hayes.com",
+    "type": "A",
+    "value": "229.12.143.138"
+  },
+  {
+    "host": "hayes.com",
+    "type": "TXT",
+    "value": "Dolor quis repellendus. Numquam officia autem dolor maiores minima est. Quas eos expedita ut."
+  },
+  {
+    "host": "hayes.com",
+    "type": "CNAME",
+    "value": "alias-decker.org"
+  },
+  {
+    "host": "hayes.com",
+    "type": "SOA",
+    "value": [
+      "ns1.hayes.com",
+      "admin.hayes.com"
+    ]
+  },
+  {
+    "host": "gregory.info",
+    "type": "A",
+    "value": "239.145.7.185"
+  },
+  {
+    "host": "gregory.info",
+    "type": "TXT",
+    "value": "Quae voluptates quo iusto. Autem architecto labore harum. Eaque veritatis ea inventore."
+  },
+  {
+    "host": "gregory.info",
+    "type": "MX",
+    "value": [
+      "mx18.gregory.info",
+      18
+    ]
+  },
+  {
+    "host": "gregory.info",
+    "type": "MX",
+    "value": [
+      "mx16.gregory.info",
+      16
+    ]
+  },
+  {
+    "host": "gregory.info",
+    "type": "CNAME",
+    "value": "alias-vang.com"
+  },
+  {
+    "host": "gregory.info",
+    "type": "SOA",
+    "value": [
+      "ns1.gregory.info",
+      "admin.gregory.info"
+    ]
+  },
+  {
+    "host": "frederick-james.biz",
+    "type": "A",
+    "value": "87.64.212.185"
+  },
+  {
+    "host": "frederick-james.biz",
+    "type": "NS",
+    "value": "ns2.frederick-james.biz"
+  },
+  {
+    "host": "frederick-james.biz",
+    "type": "TXT",
+    "value": "Tenetur similique et consectetur. Perspiciatis quibusdam architecto ut corrupti occaecati illum."
+  },
+  {
+    "host": "frederick-james.biz",
+    "type": "MX",
+    "value": [
+      "mx12.frederick-james.biz",
+      12
+    ]
+  },
+  {
+    "host": "frederick-james.biz",
+    "type": "SOA",
+    "value": [
+      "ns1.frederick-james.biz",
+      "admin.frederick-james.biz"
+    ]
+  },
+  {
+    "host": "small-gallagher.com",
+    "type": "A",
+    "value": "151.211.240.65"
+  },
+  {
+    "host": "small-gallagher.com",
+    "type": "NS",
+    "value": "ns1.small-gallagher.com"
+  },
+  {
+    "host": "small-gallagher.com",
+    "type": "MX",
+    "value": [
+      "mx6.small-gallagher.com",
+      6
+    ]
+  },
+  {
+    "host": "small-gallagher.com",
+    "type": "SOA",
+    "value": [
+      "ns1.small-gallagher.com",
+      "admin.small-gallagher.com"
+    ]
+  },
+  {
+    "host": "smith.info",
+    "type": "A",
+    "value": "11.193.3.96"
+  },
+  {
+    "host": "smith.info",
+    "type": "TXT",
+    "value": "Sit nostrum tenetur culpa maxime."
+  },
+  {
+    "host": "smith.info",
+    "type": "TXT",
+    "value": "Itaque nostrum saepe cupiditate. Quasi sed consequuntur omnis."
+  },
+  {
+    "host": "smith.info",
+    "type": "TXT",
+    "value": "Impedit praesentium dolorem nobis deleniti. Modi recusandae ab ducimus."
+  },
+  {
+    "host": "smith.info",
+    "type": "SOA",
+    "value": [
+      "ns1.smith.info",
+      "admin.smith.info"
+    ]
+  },
+  {
+    "host": "robertson.com",
+    "type": "A",
+    "value": "56.68.250.158"
+  },
+  {
+    "host": "robertson.com",
+    "type": "MX",
+    "value": [
+      "mx12.robertson.com",
+      12
+    ]
+  },
+  {
+    "host": "robertson.com",
+    "type": "TXT",
+    "value": "Labore vel quae eos. Modi ipsam amet repellat unde saepe nemo. Animi perferendis saepe voluptatem."
+  },
+  {
+    "host": "robertson.com",
+    "type": "TXT",
+    "value": "Quae ullam quo ipsum error tenetur. Magnam ipsam minima illum. Quod voluptate qui saepe sit."
+  },
+  {
+    "host": "robertson.com",
+    "type": "SOA",
+    "value": [
+      "ns1.robertson.com",
+      "admin.robertson.com"
+    ]
+  },
+  {
+    "host": "harvey.biz",
+    "type": "A",
+    "value": "187.192.248.68"
+  },
+  {
+    "host": "harvey.biz",
+    "type": "NS",
+    "value": "ns3.harvey.biz"
+  },
+  {
+    "host": "harvey.biz",
+    "type": "TXT",
+    "value": "Voluptate fuga suscipit nulla. Ea alias veniam a sequi doloribus quod."
+  },
+  {
+    "host": "harvey.biz",
+    "type": "CNAME",
+    "value": "alias-smith.info"
+  },
+  {
+    "host": "harvey.biz",
+    "type": "SOA",
+    "value": [
+      "ns1.harvey.biz",
+      "admin.harvey.biz"
+    ]
+  },
+  {
+    "host": "terrell-williams.net",
+    "type": "A",
+    "value": "76.180.73.193"
+  },
+  {
+    "host": "terrell-williams.net",
+    "type": "NS",
+    "value": "ns2.terrell-williams.net"
+  },
+  {
+    "host": "terrell-williams.net",
+    "type": "CNAME",
+    "value": "alias-allen.com"
+  },
+  {
+    "host": "terrell-williams.net",
+    "type": "TXT",
+    "value": "Unde doloribus repudiandae repudiandae. Quasi nam perferendis similique perferendis laborum."
+  },
+  {
+    "host": "terrell-williams.net",
+    "type": "MX",
+    "value": [
+      "mx14.terrell-williams.net",
+      14
+    ]
+  },
+  {
+    "host": "terrell-williams.net",
+    "type": "SOA",
+    "value": [
+      "ns1.terrell-williams.net",
+      "admin.terrell-williams.net"
+    ]
+  },
+  {
+    "host": "thomas.com",
+    "type": "A",
+    "value": "185.126.190.130"
+  },
+  {
+    "host": "thomas.com",
+    "type": "TXT",
+    "value": "Impedit commodi facere fugiat quae ratione voluptas vero."
+  },
+  {
+    "host": "thomas.com",
+    "type": "NS",
+    "value": "ns2.thomas.com"
+  },
+  {
+    "host": "thomas.com",
+    "type": "SOA",
+    "value": [
+      "ns1.thomas.com",
+      "admin.thomas.com"
+    ]
+  },
+  {
+    "host": "gallagher.biz",
+    "type": "A",
+    "value": "156.157.170.55"
+  },
+  {
+    "host": "gallagher.biz",
+    "type": "NS",
+    "value": "ns2.gallagher.biz"
+  },
+  {
+    "host": "gallagher.biz",
+    "type": "CNAME",
+    "value": "alias-bennett-lee.com"
+  },
+  {
+    "host": "gallagher.biz",
+    "type": "SOA",
+    "value": [
+      "ns1.gallagher.biz",
+      "admin.gallagher.biz"
+    ]
+  },
+  {
+    "host": "rodriguez.net",
+    "type": "A",
+    "value": "240.188.245.82"
+  },
+  {
+    "host": "rodriguez.net",
+    "type": "CNAME",
+    "value": "alias-franklin.com"
+  },
+  {
+    "host": "rodriguez.net",
+    "type": "TXT",
+    "value": "Earum cumque quaerat. Beatae iste perferendis iste mollitia. Ea consequuntur culpa fugit."
+  },
+  {
+    "host": "rodriguez.net",
+    "type": "SOA",
+    "value": [
+      "ns1.rodriguez.net",
+      "admin.rodriguez.net"
+    ]
+  },
+  {
+    "host": "hahn-wolfe.com",
+    "type": "A",
+    "value": "43.105.245.35"
+  },
+  {
+    "host": "hahn-wolfe.com",
+    "type": "TXT",
+    "value": "Aliquid nostrum labore ipsa architecto dolore."
+  },
+  {
+    "host": "hahn-wolfe.com",
+    "type": "CNAME",
+    "value": "alias-valenzuela.org"
+  },
+  {
+    "host": "hahn-wolfe.com",
+    "type": "CNAME",
+    "value": "alias-green.com"
+  },
+  {
+    "host": "hahn-wolfe.com",
+    "type": "SOA",
+    "value": [
+      "ns1.hahn-wolfe.com",
+      "admin.hahn-wolfe.com"
+    ]
+  },
+  {
+    "host": "raymond-mann.net",
+    "type": "A",
+    "value": "53.239.3.119"
+  },
+  {
+    "host": "raymond-mann.net",
+    "type": "CNAME",
+    "value": "alias-morgan.biz"
+  },
+  {
+    "host": "raymond-mann.net",
+    "type": "MX",
+    "value": [
+      "mx2.raymond-mann.net",
+      2
+    ]
+  },
+  {
+    "host": "raymond-mann.net",
+    "type": "NS",
+    "value": "ns2.raymond-mann.net"
+  },
+  {
+    "host": "raymond-mann.net",
+    "type": "NS",
+    "value": "ns3.raymond-mann.net"
+  },
+  {
+    "host": "raymond-mann.net",
+    "type": "SOA",
+    "value": [
+      "ns1.raymond-mann.net",
+      "admin.raymond-mann.net"
+    ]
+  },
+  {
+    "host": "maynard.org",
+    "type": "A",
+    "value": "223.65.57.56"
+  },
+  {
+    "host": "maynard.org",
+    "type": "NS",
+    "value": "ns1.maynard.org"
+  },
+  {
+    "host": "maynard.org",
+    "type": "TXT",
+    "value": "Reprehenderit cumque possimus tempora fugiat ullam. Dolorem a fuga facere molestiae praesentium."
+  },
+  {
+    "host": "maynard.org",
+    "type": "SOA",
+    "value": [
+      "ns1.maynard.org",
+      "admin.maynard.org"
+    ]
+  },
+  {
+    "host": "lane-zimmerman.com",
+    "type": "A",
+    "value": "87.47.129.170"
+  },
+  {
+    "host": "lane-zimmerman.com",
+    "type": "MX",
+    "value": [
+      "mx12.lane-zimmerman.com",
+      12
+    ]
+  },
+  {
+    "host": "lane-zimmerman.com",
+    "type": "CNAME",
+    "value": "alias-wilson.org"
+  },
+  {
+    "host": "lane-zimmerman.com",
+    "type": "NS",
+    "value": "ns2.lane-zimmerman.com"
+  },
+  {
+    "host": "lane-zimmerman.com",
+    "type": "SOA",
+    "value": [
+      "ns1.lane-zimmerman.com",
+      "admin.lane-zimmerman.com"
+    ]
+  },
+  {
+    "host": "wong.org",
+    "type": "A",
+    "value": "103.242.34.226"
+  },
+  {
+    "host": "wong.org",
+    "type": "CNAME",
+    "value": "alias-francis.com"
+  },
+  {
+    "host": "wong.org",
+    "type": "MX",
+    "value": [
+      "mx16.wong.org",
+      16
+    ]
+  },
+  {
+    "host": "wong.org",
+    "type": "CNAME",
+    "value": "alias-sutton-garza.com"
+  },
+  {
+    "host": "wong.org",
+    "type": "SOA",
+    "value": [
+      "ns1.wong.org",
+      "admin.wong.org"
+    ]
+  },
+  {
+    "host": "melton-copeland.info",
+    "type": "A",
+    "value": "80.124.43.222"
+  },
+  {
+    "host": "melton-copeland.info",
+    "type": "CNAME",
+    "value": "alias-meyer.org"
+  },
+  {
+    "host": "melton-copeland.info",
+    "type": "CNAME",
+    "value": "alias-edwards.com"
+  },
+  {
+    "host": "melton-copeland.info",
+    "type": "TXT",
+    "value": "At officiis cum nam excepturi doloremque. Repudiandae odio et aliquam."
+  },
+  {
+    "host": "melton-copeland.info",
+    "type": "SOA",
+    "value": [
+      "ns1.melton-copeland.info",
+      "admin.melton-copeland.info"
+    ]
+  },
+  {
+    "host": "clements-curry.biz",
+    "type": "A",
+    "value": "53.9.196.229"
+  },
+  {
+    "host": "clements-curry.biz",
+    "type": "CNAME",
+    "value": "alias-ho-mann.com"
+  },
+  {
+    "host": "clements-curry.biz",
+    "type": "TXT",
+    "value": "Magni facilis dolorum. Quae fugit adipisci a."
+  },
+  {
+    "host": "clements-curry.biz",
+    "type": "TXT",
+    "value": "Porro iure facilis placeat. Cumque incidunt vel temporibus."
+  },
+  {
+    "host": "clements-curry.biz",
+    "type": "SOA",
+    "value": [
+      "ns1.clements-curry.biz",
+      "admin.clements-curry.biz"
+    ]
+  },
+  {
+    "host": "roberts.com",
+    "type": "A",
+    "value": "1.185.233.174"
+  },
+  {
+    "host": "roberts.com",
+    "type": "TXT",
+    "value": "Atque officia quod. Dignissimos molestiae molestiae laborum possimus."
+  },
+  {
+    "host": "roberts.com",
+    "type": "NS",
+    "value": "ns2.roberts.com"
+  },
+  {
+    "host": "roberts.com",
+    "type": "SOA",
+    "value": [
+      "ns1.roberts.com",
+      "admin.roberts.com"
+    ]
+  },
+  {
+    "host": "clements.net",
+    "type": "A",
+    "value": "218.104.166.196"
+  },
+  {
+    "host": "clements.net",
+    "type": "MX",
+    "value": [
+      "mx3.clements.net",
+      3
+    ]
+  },
+  {
+    "host": "clements.net",
+    "type": "CNAME",
+    "value": "alias-guerrero.net"
+  },
+  {
+    "host": "clements.net",
+    "type": "TXT",
+    "value": "Accusantium quasi porro. Cupiditate soluta magni ex modi."
+  },
+  {
+    "host": "clements.net",
+    "type": "SOA",
+    "value": [
+      "ns1.clements.net",
+      "admin.clements.net"
+    ]
+  },
+  {
+    "host": "baker.com",
+    "type": "A",
+    "value": "172.200.94.53"
+  },
+  {
+    "host": "baker.com",
+    "type": "TXT",
+    "value": "Molestiae expedita esse facere sint exercitationem. Molestiae repellendus quod neque beatae enim."
+  },
+  {
+    "host": "baker.com",
+    "type": "MX",
+    "value": [
+      "mx13.baker.com",
+      13
+    ]
+  },
+  {
+    "host": "baker.com",
+    "type": "MX",
+    "value": [
+      "mx11.baker.com",
+      11
+    ]
+  },
+  {
+    "host": "baker.com",
+    "type": "SOA",
+    "value": [
+      "ns1.baker.com",
+      "admin.baker.com"
+    ]
+  },
+  {
+    "host": "adams.com",
+    "type": "A",
+    "value": "118.197.240.9"
+  },
+  {
+    "host": "adams.com",
+    "type": "TXT",
+    "value": "Eveniet voluptate laboriosam porro minus. Ex tempore nemo excepturi."
+  },
+  {
+    "host": "adams.com",
+    "type": "TXT",
+    "value": "Nam earum culpa voluptatem. Doloribus dolorem laudantium omnis."
+  },
+  {
+    "host": "adams.com",
+    "type": "SOA",
+    "value": [
+      "ns1.adams.com",
+      "admin.adams.com"
+    ]
+  },
+  {
+    "host": "gordon.org",
+    "type": "A",
+    "value": "22.3.242.124"
+  },
+  {
+    "host": "gordon.org",
+    "type": "TXT",
+    "value": "Unde libero consequuntur ipsam consequatur."
+  },
+  {
+    "host": "gordon.org",
+    "type": "TXT",
+    "value": "Consequuntur earum quisquam tempora dolorum aut. Tempora impedit illum facere in."
+  },
+  {
+    "host": "gordon.org",
+    "type": "SOA",
+    "value": [
+      "ns1.gordon.org",
+      "admin.gordon.org"
+    ]
+  },
+  {
+    "host": "luna.info",
+    "type": "A",
+    "value": "211.143.121.31"
+  },
+  {
+    "host": "luna.info",
+    "type": "TXT",
+    "value": "Aspernatur assumenda ducimus quibusdam qui aliquam quos ex. Quaerat ipsam quod esse."
+  },
+  {
+    "host": "luna.info",
+    "type": "MX",
+    "value": [
+      "mx20.luna.info",
+      20
+    ]
+  },
+  {
+    "host": "luna.info",
+    "type": "SOA",
+    "value": [
+      "ns1.luna.info",
+      "admin.luna.info"
+    ]
+  },
+  {
+    "host": "cisneros.com",
+    "type": "A",
+    "value": "93.39.177.123"
+  },
+  {
+    "host": "cisneros.com",
+    "type": "TXT",
+    "value": "Magnam exercitationem iusto. Debitis nostrum exercitationem culpa."
+  },
+  {
+    "host": "cisneros.com",
+    "type": "CNAME",
+    "value": "alias-morgan.com"
+  },
+  {
+    "host": "cisneros.com",
+    "type": "TXT",
+    "value": "Eius natus nisi."
+  },
+  {
+    "host": "cisneros.com",
+    "type": "CNAME",
+    "value": "alias-johnson.com"
+  },
+  {
+    "host": "cisneros.com",
+    "type": "SOA",
+    "value": [
+      "ns1.cisneros.com",
+      "admin.cisneros.com"
+    ]
+  },
+  {
+    "host": "hinton.org",
+    "type": "A",
+    "value": "54.223.80.44"
+  },
+  {
+    "host": "hinton.org",
+    "type": "TXT",
+    "value": "Omnis dolorem dolor magnam. Optio enim temporibus earum velit aliquam. Est at neque repellat."
+  },
+  {
+    "host": "hinton.org",
+    "type": "MX",
+    "value": [
+      "mx8.hinton.org",
+      8
+    ]
+  },
+  {
+    "host": "hinton.org",
+    "type": "TXT",
+    "value": "Eos ad ex possimus quisquam iure. Ratione assumenda sed quam cumque delectus ratione."
+  },
+  {
+    "host": "hinton.org",
+    "type": "CNAME",
+    "value": "alias-santiago-steele.org"
+  },
+  {
+    "host": "hinton.org",
+    "type": "SOA",
+    "value": [
+      "ns1.hinton.org",
+      "admin.hinton.org"
+    ]
+  },
+  {
+    "host": "berry-russell.biz",
+    "type": "A",
+    "value": "85.95.98.55"
+  },
+  {
+    "host": "berry-russell.biz",
+    "type": "NS",
+    "value": "ns3.berry-russell.biz"
+  },
+  {
+    "host": "berry-russell.biz",
+    "type": "MX",
+    "value": [
+      "mx2.berry-russell.biz",
+      2
+    ]
+  },
+  {
+    "host": "berry-russell.biz",
+    "type": "SOA",
+    "value": [
+      "ns1.berry-russell.biz",
+      "admin.berry-russell.biz"
+    ]
+  },
+  {
+    "host": "figueroa.com",
+    "type": "A",
+    "value": "120.170.173.36"
+  },
+  {
+    "host": "figueroa.com",
+    "type": "CNAME",
+    "value": "alias-molina-sullivan.net"
+  },
+  {
+    "host": "figueroa.com",
+    "type": "CNAME",
+    "value": "alias-duffy.biz"
+  },
+  {
+    "host": "figueroa.com",
+    "type": "MX",
+    "value": [
+      "mx11.figueroa.com",
+      11
+    ]
+  },
+  {
+    "host": "figueroa.com",
+    "type": "SOA",
+    "value": [
+      "ns1.figueroa.com",
+      "admin.figueroa.com"
+    ]
+  },
+  {
+    "host": "brown-velez.org",
+    "type": "A",
+    "value": "8.46.145.196"
+  },
+  {
+    "host": "brown-velez.org",
+    "type": "TXT",
+    "value": "Neque dolore rerum maxime qui."
+  },
+  {
+    "host": "brown-velez.org",
+    "type": "TXT",
+    "value": "Alias quas eveniet in id. Sequi adipisci saepe at."
+  },
+  {
+    "host": "brown-velez.org",
+    "type": "SOA",
+    "value": [
+      "ns1.brown-velez.org",
+      "admin.brown-velez.org"
+    ]
+  },
+  {
+    "host": "obrien.com",
+    "type": "A",
+    "value": "50.165.244.130"
+  },
+  {
+    "host": "obrien.com",
+    "type": "TXT",
+    "value": "A totam odio dolor in. Doloribus magni ullam culpa necessitatibus vel."
+  },
+  {
+    "host": "obrien.com",
+    "type": "TXT",
+    "value": "Repellat odit accusantium neque aliquam. Consequuntur hic ducimus modi odio."
+  },
+  {
+    "host": "obrien.com",
+    "type": "SOA",
+    "value": [
+      "ns1.obrien.com",
+      "admin.obrien.com"
+    ]
+  },
+  {
+    "host": "miller.net",
+    "type": "A",
+    "value": "99.135.34.243"
+  },
+  {
+    "host": "miller.net",
+    "type": "CNAME",
+    "value": "alias-cox-taylor.org"
+  },
+  {
+    "host": "miller.net",
+    "type": "NS",
+    "value": "ns1.miller.net"
+  },
+  {
+    "host": "miller.net",
+    "type": "MX",
+    "value": [
+      "mx3.miller.net",
+      3
+    ]
+  },
+  {
+    "host": "miller.net",
+    "type": "CNAME",
+    "value": "alias-coleman.com"
+  },
+  {
+    "host": "miller.net",
+    "type": "SOA",
+    "value": [
+      "ns1.miller.net",
+      "admin.miller.net"
+    ]
+  },
+  {
+    "host": "page.com",
+    "type": "A",
+    "value": "122.121.241.162"
+  },
+  {
+    "host": "page.com",
+    "type": "CNAME",
+    "value": "alias-frost-warner.biz"
+  },
+  {
+    "host": "page.com",
+    "type": "TXT",
+    "value": "Eos voluptatibus eius laudantium maxime molestiae ea. Nobis labore magni vitae."
+  },
+  {
+    "host": "page.com",
+    "type": "MX",
+    "value": [
+      "mx2.page.com",
+      2
+    ]
+  },
+  {
+    "host": "page.com",
+    "type": "NS",
+    "value": "ns2.page.com"
+  },
+  {
+    "host": "page.com",
+    "type": "SOA",
+    "value": [
+      "ns1.page.com",
+      "admin.page.com"
+    ]
+  },
+  {
+    "host": "lawrence.info",
+    "type": "A",
+    "value": "43.205.145.201"
+  },
+  {
+    "host": "lawrence.info",
+    "type": "CNAME",
+    "value": "alias-carson.com"
+  },
+  {
+    "host": "lawrence.info",
+    "type": "NS",
+    "value": "ns3.lawrence.info"
+  },
+  {
+    "host": "lawrence.info",
+    "type": "NS",
+    "value": "ns3.lawrence.info"
+  },
+  {
+    "host": "lawrence.info",
+    "type": "SOA",
+    "value": [
+      "ns1.lawrence.info",
+      "admin.lawrence.info"
+    ]
+  },
+  {
+    "host": "barnett-diaz.com",
+    "type": "A",
+    "value": "132.72.106.68"
+  },
+  {
+    "host": "barnett-diaz.com",
+    "type": "CNAME",
+    "value": "alias-pham-bradford.net"
+  },
+  {
+    "host": "barnett-diaz.com",
+    "type": "NS",
+    "value": "ns3.barnett-diaz.com"
+  },
+  {
+    "host": "barnett-diaz.com",
+    "type": "TXT",
+    "value": "Est ex ex non. Repellat laborum eveniet aspernatur molestias."
+  },
+  {
+    "host": "barnett-diaz.com",
+    "type": "SOA",
+    "value": [
+      "ns1.barnett-diaz.com",
+      "admin.barnett-diaz.com"
+    ]
+  },
+  {
+    "host": "smith.com",
+    "type": "A",
+    "value": "137.193.71.45"
+  },
+  {
+    "host": "smith.com",
+    "type": "NS",
+    "value": "ns2.smith.com"
+  },
+  {
+    "host": "smith.com",
+    "type": "CNAME",
+    "value": "alias-thomas.com"
+  },
+  {
+    "host": "smith.com",
+    "type": "SOA",
+    "value": [
+      "ns1.smith.com",
+      "admin.smith.com"
+    ]
+  },
+  {
+    "host": "shelton.com",
+    "type": "A",
+    "value": "214.215.33.164"
+  },
+  {
+    "host": "shelton.com",
+    "type": "NS",
+    "value": "ns2.shelton.com"
+  },
+  {
+    "host": "shelton.com",
+    "type": "CNAME",
+    "value": "alias-ramirez.com"
+  },
+  {
+    "host": "shelton.com",
+    "type": "CNAME",
+    "value": "alias-friedman.com"
+  },
+  {
+    "host": "shelton.com",
+    "type": "MX",
+    "value": [
+      "mx13.shelton.com",
+      13
+    ]
+  },
+  {
+    "host": "shelton.com",
+    "type": "SOA",
+    "value": [
+      "ns1.shelton.com",
+      "admin.shelton.com"
+    ]
+  },
+  {
+    "host": "ramirez.com",
+    "type": "A",
+    "value": "141.39.201.68"
+  },
+  {
+    "host": "ramirez.com",
+    "type": "NS",
+    "value": "ns3.ramirez.com"
+  },
+  {
+    "host": "ramirez.com",
+    "type": "MX",
+    "value": [
+      "mx16.ramirez.com",
+      16
+    ]
+  },
+  {
+    "host": "ramirez.com",
+    "type": "CNAME",
+    "value": "alias-madden.com"
+  },
+  {
+    "host": "ramirez.com",
+    "type": "TXT",
+    "value": "Magni minus veniam neque natus harum. Cumque nostrum laudantium est natus."
+  },
+  {
+    "host": "ramirez.com",
+    "type": "SOA",
+    "value": [
+      "ns1.ramirez.com",
+      "admin.ramirez.com"
+    ]
+  },
+  {
+    "host": "nelson.com",
+    "type": "A",
+    "value": "11.130.143.88"
+  },
+  {
+    "host": "nelson.com",
+    "type": "NS",
+    "value": "ns2.nelson.com"
+  },
+  {
+    "host": "nelson.com",
+    "type": "CNAME",
+    "value": "alias-rodriguez.com"
+  },
+  {
+    "host": "nelson.com",
+    "type": "NS",
+    "value": "ns1.nelson.com"
+  },
+  {
+    "host": "nelson.com",
+    "type": "SOA",
+    "value": [
+      "ns1.nelson.com",
+      "admin.nelson.com"
+    ]
+  },
+  {
+    "host": "rosario.biz",
+    "type": "A",
+    "value": "135.159.241.66"
+  },
+  {
+    "host": "rosario.biz",
+    "type": "MX",
+    "value": [
+      "mx14.rosario.biz",
+      14
+    ]
+  },
+  {
+    "host": "rosario.biz",
+    "type": "NS",
+    "value": "ns2.rosario.biz"
+  },
+  {
+    "host": "rosario.biz",
+    "type": "MX",
+    "value": [
+      "mx18.rosario.biz",
+      18
+    ]
+  },
+  {
+    "host": "rosario.biz",
+    "type": "SOA",
+    "value": [
+      "ns1.rosario.biz",
+      "admin.rosario.biz"
+    ]
+  },
+  {
+    "host": "payne.com",
+    "type": "A",
+    "value": "102.87.154.211"
+  },
+  {
+    "host": "payne.com",
+    "type": "TXT",
+    "value": "Officiis excepturi expedita. Excepturi eos voluptate dolores magnam assumenda facilis."
+  },
+  {
+    "host": "payne.com",
+    "type": "CNAME",
+    "value": "alias-arias.net"
+  },
+  {
+    "host": "payne.com",
+    "type": "CNAME",
+    "value": "alias-patrick.com"
+  },
+  {
+    "host": "payne.com",
+    "type": "NS",
+    "value": "ns1.payne.com"
+  },
+  {
+    "host": "payne.com",
+    "type": "SOA",
+    "value": [
+      "ns1.payne.com",
+      "admin.payne.com"
+    ]
+  },
+  {
+    "host": "morris-mitchell.com",
+    "type": "A",
+    "value": "150.26.142.27"
+  },
+  {
+    "host": "morris-mitchell.com",
+    "type": "MX",
+    "value": [
+      "mx4.morris-mitchell.com",
+      4
+    ]
+  },
+  {
+    "host": "morris-mitchell.com",
+    "type": "NS",
+    "value": "ns2.morris-mitchell.com"
+  },
+  {
+    "host": "morris-mitchell.com",
+    "type": "MX",
+    "value": [
+      "mx2.morris-mitchell.com",
+      2
+    ]
+  },
+  {
+    "host": "morris-mitchell.com",
+    "type": "SOA",
+    "value": [
+      "ns1.morris-mitchell.com",
+      "admin.morris-mitchell.com"
+    ]
+  },
+  {
+    "host": "jensen.com",
+    "type": "A",
+    "value": "44.44.3.55"
+  },
+  {
+    "host": "jensen.com",
+    "type": "NS",
+    "value": "ns1.jensen.com"
+  },
+  {
+    "host": "jensen.com",
+    "type": "MX",
+    "value": [
+      "mx5.jensen.com",
+      5
+    ]
+  },
+  {
+    "host": "jensen.com",
+    "type": "SOA",
+    "value": [
+      "ns1.jensen.com",
+      "admin.jensen.com"
+    ]
+  },
+  {
+    "host": "cunningham-martinez.info",
+    "type": "A",
+    "value": "188.201.203.49"
+  },
+  {
+    "host": "cunningham-martinez.info",
+    "type": "MX",
+    "value": [
+      "mx17.cunningham-martinez.info",
+      17
+    ]
+  },
+  {
+    "host": "cunningham-martinez.info",
+    "type": "CNAME",
+    "value": "alias-carter.net"
+  },
+  {
+    "host": "cunningham-martinez.info",
+    "type": "TXT",
+    "value": "At praesentium itaque vel praesentium aliquam deserunt. Nemo tenetur vitae modi."
+  },
+  {
+    "host": "cunningham-martinez.info",
+    "type": "SOA",
+    "value": [
+      "ns1.cunningham-martinez.info",
+      "admin.cunningham-martinez.info"
+    ]
+  },
+  {
+    "host": "duarte.com",
+    "type": "A",
+    "value": "170.115.217.112"
+  },
+  {
+    "host": "duarte.com",
+    "type": "TXT",
+    "value": "Consectetur enim iusto repellendus. Culpa cumque earum quaerat natus dolorem distinctio."
+  },
+  {
+    "host": "duarte.com",
+    "type": "NS",
+    "value": "ns3.duarte.com"
+  },
+  {
+    "host": "duarte.com",
+    "type": "MX",
+    "value": [
+      "mx14.duarte.com",
+      14
+    ]
+  },
+  {
+    "host": "duarte.com",
+    "type": "NS",
+    "value": "ns3.duarte.com"
+  },
+  {
+    "host": "duarte.com",
+    "type": "SOA",
+    "value": [
+      "ns1.duarte.com",
+      "admin.duarte.com"
+    ]
+  },
+  {
+    "host": "anderson-mcpherson.net",
+    "type": "A",
+    "value": "48.58.120.31"
+  },
+  {
+    "host": "anderson-mcpherson.net",
+    "type": "TXT",
+    "value": "Illo aspernatur est provident nemo. Vel vitae et fugit rem unde. Amet laudantium eius vel ipsam."
+  },
+  {
+    "host": "anderson-mcpherson.net",
+    "type": "CNAME",
+    "value": "alias-jones.biz"
+  },
+  {
+    "host": "anderson-mcpherson.net",
+    "type": "TXT",
+    "value": "Consequatur repudiandae doloremque repudiandae. Ipsa ad fugiat nisi amet."
+  },
+  {
+    "host": "anderson-mcpherson.net",
+    "type": "TXT",
+    "value": "Libero eos doloremque hic voluptatibus rerum. Maxime tempora quod debitis voluptates hic."
+  },
+  {
+    "host": "anderson-mcpherson.net",
+    "type": "SOA",
+    "value": [
+      "ns1.anderson-mcpherson.net",
+      "admin.anderson-mcpherson.net"
+    ]
+  },
+  {
+    "host": "sanchez.com",
+    "type": "A",
+    "value": "213.194.48.191"
+  },
+  {
+    "host": "sanchez.com",
+    "type": "TXT",
+    "value": "Similique in sit ut. Itaque quaerat eum accusantium."
+  },
+  {
+    "host": "sanchez.com",
+    "type": "TXT",
+    "value": "Laborum dolores ex libero odit dicta voluptatum. Ipsam nostrum occaecati."
+  },
+  {
+    "host": "sanchez.com",
+    "type": "SOA",
+    "value": [
+      "ns1.sanchez.com",
+      "admin.sanchez.com"
+    ]
+  },
+  {
+    "host": "daniel.info",
+    "type": "A",
+    "value": "218.26.141.167"
+  },
+  {
+    "host": "daniel.info",
+    "type": "CNAME",
+    "value": "alias-harvey.com"
+  },
+  {
+    "host": "daniel.info",
+    "type": "TXT",
+    "value": "Impedit qui blanditiis occaecati a. Et explicabo sit enim autem excepturi harum."
+  },
+  {
+    "host": "daniel.info",
+    "type": "CNAME",
+    "value": "alias-douglas.com"
+  },
+  {
+    "host": "daniel.info",
+    "type": "SOA",
+    "value": [
+      "ns1.daniel.info",
+      "admin.daniel.info"
+    ]
+  },
+  {
+    "host": "berger.net",
+    "type": "A",
+    "value": "15.166.57.251"
+  },
+  {
+    "host": "berger.net",
+    "type": "CNAME",
+    "value": "alias-hood.com"
+  },
+  {
+    "host": "berger.net",
+    "type": "TXT",
+    "value": "At amet saepe mollitia laborum expedita necessitatibus. Ab quaerat accusamus dignissimos."
+  },
+  {
+    "host": "berger.net",
+    "type": "MX",
+    "value": [
+      "mx20.berger.net",
+      20
+    ]
+  },
+  {
+    "host": "berger.net",
+    "type": "NS",
+    "value": "ns2.berger.net"
+  },
+  {
+    "host": "berger.net",
+    "type": "SOA",
+    "value": [
+      "ns1.berger.net",
+      "admin.berger.net"
+    ]
+  },
+  {
+    "host": "brown.biz",
+    "type": "A",
+    "value": "253.135.119.6"
+  },
+  {
+    "host": "brown.biz",
+    "type": "NS",
+    "value": "ns1.brown.biz"
+  },
+  {
+    "host": "brown.biz",
+    "type": "MX",
+    "value": [
+      "mx18.brown.biz",
+      18
+    ]
+  },
+  {
+    "host": "brown.biz",
+    "type": "SOA",
+    "value": [
+      "ns1.brown.biz",
+      "admin.brown.biz"
+    ]
+  },
+  {
+    "host": "thornton-simmons.com",
+    "type": "A",
+    "value": "116.208.10.239"
+  },
+  {
+    "host": "thornton-simmons.com",
+    "type": "CNAME",
+    "value": "alias-gordon.com"
+  },
+  {
+    "host": "thornton-simmons.com",
+    "type": "NS",
+    "value": "ns3.thornton-simmons.com"
+  },
+  {
+    "host": "thornton-simmons.com",
+    "type": "NS",
+    "value": "ns1.thornton-simmons.com"
+  },
+  {
+    "host": "thornton-simmons.com",
+    "type": "MX",
+    "value": [
+      "mx8.thornton-simmons.com",
+      8
+    ]
+  },
+  {
+    "host": "thornton-simmons.com",
+    "type": "SOA",
+    "value": [
+      "ns1.thornton-simmons.com",
+      "admin.thornton-simmons.com"
+    ]
+  },
+  {
+    "host": "brown.com",
+    "type": "A",
+    "value": "21.187.137.174"
+  },
+  {
+    "host": "brown.com",
+    "type": "MX",
+    "value": [
+      "mx10.brown.com",
+      10
+    ]
+  },
+  {
+    "host": "brown.com",
+    "type": "NS",
+    "value": "ns1.brown.com"
+  },
+  {
+    "host": "brown.com",
+    "type": "SOA",
+    "value": [
+      "ns1.brown.com",
+      "admin.brown.com"
+    ]
+  },
+  {
+    "host": "scott-mcmahon.com",
+    "type": "A",
+    "value": "91.190.15.25"
+  },
+  {
+    "host": "scott-mcmahon.com",
+    "type": "MX",
+    "value": [
+      "mx20.scott-mcmahon.com",
+      20
+    ]
+  },
+  {
+    "host": "scott-mcmahon.com",
+    "type": "TXT",
+    "value": "Perferendis voluptas facilis libero."
+  },
+  {
+    "host": "scott-mcmahon.com",
+    "type": "SOA",
+    "value": [
+      "ns1.scott-mcmahon.com",
+      "admin.scott-mcmahon.com"
+    ]
+  },
+  {
+    "host": "williams.biz",
+    "type": "A",
+    "value": "184.252.219.251"
+  },
+  {
+    "host": "williams.biz",
+    "type": "CNAME",
+    "value": "alias-paul-bailey.org"
+  },
+  {
+    "host": "williams.biz",
+    "type": "CNAME",
+    "value": "alias-ortiz-gomez.com"
+  },
+  {
+    "host": "williams.biz",
+    "type": "SOA",
+    "value": [
+      "ns1.williams.biz",
+      "admin.williams.biz"
+    ]
+  },
+  {
+    "host": "santana.net",
+    "type": "A",
+    "value": "54.115.160.33"
+  },
+  {
+    "host": "santana.net",
+    "type": "CNAME",
+    "value": "alias-cross-velazquez.com"
+  },
+  {
+    "host": "santana.net",
+    "type": "CNAME",
+    "value": "alias-carlson.com"
+  },
+  {
+    "host": "santana.net",
+    "type": "SOA",
+    "value": [
+      "ns1.santana.net",
+      "admin.santana.net"
+    ]
+  },
+  {
+    "host": "roberts.biz",
+    "type": "A",
+    "value": "18.207.222.255"
+  },
+  {
+    "host": "roberts.biz",
+    "type": "MX",
+    "value": [
+      "mx9.roberts.biz",
+      9
+    ]
+  },
+  {
+    "host": "roberts.biz",
+    "type": "NS",
+    "value": "ns1.roberts.biz"
+  },
+  {
+    "host": "roberts.biz",
+    "type": "SOA",
+    "value": [
+      "ns1.roberts.biz",
+      "admin.roberts.biz"
+    ]
+  },
+  {
+    "host": "preston.net",
+    "type": "A",
+    "value": "209.149.169.16"
+  },
+  {
+    "host": "preston.net",
+    "type": "TXT",
+    "value": "Tenetur facilis quod exercitationem quibusdam dolores asperiores."
+  },
+  {
+    "host": "preston.net",
+    "type": "NS",
+    "value": "ns2.preston.net"
+  },
+  {
+    "host": "preston.net",
+    "type": "MX",
+    "value": [
+      "mx3.preston.net",
+      3
+    ]
+  },
+  {
+    "host": "preston.net",
+    "type": "SOA",
+    "value": [
+      "ns1.preston.net",
+      "admin.preston.net"
+    ]
+  },
+  {
+    "host": "richardson.com",
+    "type": "A",
+    "value": "236.242.50.34"
+  },
+  {
+    "host": "richardson.com",
+    "type": "MX",
+    "value": [
+      "mx4.richardson.com",
+      4
+    ]
+  },
+  {
+    "host": "richardson.com",
+    "type": "TXT",
+    "value": "Fugiat ratione fugiat aspernatur fuga laborum. Magnam pariatur a fugiat impedit."
+  },
+  {
+    "host": "richardson.com",
+    "type": "SOA",
+    "value": [
+      "ns1.richardson.com",
+      "admin.richardson.com"
+    ]
+  },
+  {
+    "host": "lawson-sanford.net",
+    "type": "A",
+    "value": "85.178.132.142"
+  },
+  {
+    "host": "lawson-sanford.net",
+    "type": "TXT",
+    "value": "Odit libero iure debitis molestias esse id voluptatum.\nQuia modi ab sit."
+  },
+  {
+    "host": "lawson-sanford.net",
+    "type": "TXT",
+    "value": "Fugit repellendus debitis aspernatur magnam odio aspernatur. Veniam quos voluptatum a."
+  },
+  {
+    "host": "lawson-sanford.net",
+    "type": "NS",
+    "value": "ns2.lawson-sanford.net"
+  },
+  {
+    "host": "lawson-sanford.net",
+    "type": "TXT",
+    "value": "Sed modi voluptas eligendi exercitationem. Delectus in nemo quis mollitia."
+  },
+  {
+    "host": "lawson-sanford.net",
+    "type": "SOA",
+    "value": [
+      "ns1.lawson-sanford.net",
+      "admin.lawson-sanford.net"
+    ]
+  },
+  {
+    "host": "sandoval-flowers.com",
+    "type": "A",
+    "value": "242.99.14.184"
+  },
+  {
+    "host": "sandoval-flowers.com",
+    "type": "NS",
+    "value": "ns2.sandoval-flowers.com"
+  },
+  {
+    "host": "sandoval-flowers.com",
+    "type": "MX",
+    "value": [
+      "mx19.sandoval-flowers.com",
+      19
+    ]
+  },
+  {
+    "host": "sandoval-flowers.com",
+    "type": "SOA",
+    "value": [
+      "ns1.sandoval-flowers.com",
+      "admin.sandoval-flowers.com"
+    ]
+  },
+  {
+    "host": "hardin-salas.info",
+    "type": "A",
+    "value": "151.227.155.67"
+  },
+  {
+    "host": "hardin-salas.info",
+    "type": "TXT",
+    "value": "At labore dicta ad odio culpa eum. Magni vero in iste dolore laudantium odio eum."
+  },
+  {
+    "host": "hardin-salas.info",
+    "type": "NS",
+    "value": "ns3.hardin-salas.info"
+  },
+  {
+    "host": "hardin-salas.info",
+    "type": "CNAME",
+    "value": "alias-kelley.info"
+  },
+  {
+    "host": "hardin-salas.info",
+    "type": "MX",
+    "value": [
+      "mx16.hardin-salas.info",
+      16
+    ]
+  },
+  {
+    "host": "hardin-salas.info",
+    "type": "SOA",
+    "value": [
+      "ns1.hardin-salas.info",
+      "admin.hardin-salas.info"
+    ]
+  },
+  {
+    "host": "hutchinson.com",
+    "type": "A",
+    "value": "212.37.238.122"
+  },
+  {
+    "host": "hutchinson.com",
+    "type": "NS",
+    "value": "ns2.hutchinson.com"
+  },
+  {
+    "host": "hutchinson.com",
+    "type": "TXT",
+    "value": "Cumque asperiores soluta quos. Voluptatem consectetur eligendi voluptas."
+  },
+  {
+    "host": "hutchinson.com",
+    "type": "NS",
+    "value": "ns2.hutchinson.com"
+  },
+  {
+    "host": "hutchinson.com",
+    "type": "SOA",
+    "value": [
+      "ns1.hutchinson.com",
+      "admin.hutchinson.com"
+    ]
+  },
+  {
+    "host": "wagner.com",
+    "type": "A",
+    "value": "215.144.167.34"
+  },
+  {
+    "host": "wagner.com",
+    "type": "MX",
+    "value": [
+      "mx6.wagner.com",
+      6
+    ]
+  },
+  {
+    "host": "wagner.com",
+    "type": "CNAME",
+    "value": "alias-boyd.com"
+  },
+  {
+    "host": "wagner.com",
+    "type": "SOA",
+    "value": [
+      "ns1.wagner.com",
+      "admin.wagner.com"
+    ]
+  },
+  {
+    "host": "ellis.com",
+    "type": "A",
+    "value": "55.45.243.175"
+  },
+  {
+    "host": "ellis.com",
+    "type": "NS",
+    "value": "ns3.ellis.com"
+  },
+  {
+    "host": "ellis.com",
+    "type": "TXT",
+    "value": "Harum saepe ex assumenda. Nemo laudantium dolorum similique ad iusto. Soluta tempora saepe."
+  },
+  {
+    "host": "ellis.com",
+    "type": "TXT",
+    "value": "Amet quaerat magni placeat."
+  },
+  {
+    "host": "ellis.com",
+    "type": "SOA",
+    "value": [
+      "ns1.ellis.com",
+      "admin.ellis.com"
+    ]
+  },
+  {
+    "host": "collins.com",
+    "type": "A",
+    "value": "53.131.120.101"
+  },
+  {
+    "host": "collins.com",
+    "type": "NS",
+    "value": "ns2.collins.com"
+  },
+  {
+    "host": "collins.com",
+    "type": "TXT",
+    "value": "Minus placeat repellat non. Eius in suscipit dolore incidunt delectus."
+  },
+  {
+    "host": "collins.com",
+    "type": "NS",
+    "value": "ns2.collins.com"
+  },
+  {
+    "host": "collins.com",
+    "type": "CNAME",
+    "value": "alias-stewart.com"
+  },
+  {
+    "host": "collins.com",
+    "type": "SOA",
+    "value": [
+      "ns1.collins.com",
+      "admin.collins.com"
+    ]
+  },
+  {
+    "host": "fischer.info",
+    "type": "A",
+    "value": "142.81.158.77"
+  },
+  {
+    "host": "fischer.info",
+    "type": "NS",
+    "value": "ns2.fischer.info"
+  },
+  {
+    "host": "fischer.info",
+    "type": "CNAME",
+    "value": "alias-richardson.com"
+  },
+  {
+    "host": "fischer.info",
+    "type": "NS",
+    "value": "ns1.fischer.info"
+  },
+  {
+    "host": "fischer.info",
+    "type": "TXT",
+    "value": "Nobis hic itaque aut soluta perspiciatis nostrum voluptatibus. Ratione itaque eaque dolore rerum."
+  },
+  {
+    "host": "fischer.info",
+    "type": "SOA",
+    "value": [
+      "ns1.fischer.info",
+      "admin.fischer.info"
+    ]
+  },
+  {
+    "host": "smith.net",
+    "type": "A",
+    "value": "77.245.100.120"
+  },
+  {
+    "host": "smith.net",
+    "type": "MX",
+    "value": [
+      "mx1.smith.net",
+      1
+    ]
+  },
+  {
+    "host": "smith.net",
+    "type": "MX",
+    "value": [
+      "mx14.smith.net",
+      14
+    ]
+  },
+  {
+    "host": "smith.net",
+    "type": "MX",
+    "value": [
+      "mx19.smith.net",
+      19
+    ]
+  },
+  {
+    "host": "smith.net",
+    "type": "SOA",
+    "value": [
+      "ns1.smith.net",
+      "admin.smith.net"
+    ]
+  },
+  {
+    "host": "moore.com",
+    "type": "A",
+    "value": "159.90.185.108"
+  },
+  {
+    "host": "moore.com",
+    "type": "TXT",
+    "value": "Pariatur optio eum omnis dolorum officia beatae. Explicabo aperiam velit similique."
+  },
+  {
+    "host": "moore.com",
+    "type": "TXT",
+    "value": "Dignissimos doloremque illum quas temporibus. Exercitationem alias debitis asperiores illum."
+  },
+  {
+    "host": "moore.com",
+    "type": "CNAME",
+    "value": "alias-smith-harrington.com"
+  },
+  {
+    "host": "moore.com",
+    "type": "SOA",
+    "value": [
+      "ns1.moore.com",
+      "admin.moore.com"
+    ]
+  },
+  {
+    "host": "dillon-evans.org",
+    "type": "A",
+    "value": "51.5.240.242"
+  },
+  {
+    "host": "dillon-evans.org",
+    "type": "MX",
+    "value": [
+      "mx10.dillon-evans.org",
+      10
+    ]
+  },
+  {
+    "host": "dillon-evans.org",
+    "type": "CNAME",
+    "value": "alias-simpson-erickson.com"
+  },
+  {
+    "host": "dillon-evans.org",
+    "type": "SOA",
+    "value": [
+      "ns1.dillon-evans.org",
+      "admin.dillon-evans.org"
+    ]
+  },
+  {
+    "host": "garza-harris.com",
+    "type": "A",
+    "value": "251.69.87.231"
+  },
+  {
+    "host": "garza-harris.com",
+    "type": "NS",
+    "value": "ns3.garza-harris.com"
+  },
+  {
+    "host": "garza-harris.com",
+    "type": "NS",
+    "value": "ns2.garza-harris.com"
+  },
+  {
+    "host": "garza-harris.com",
+    "type": "SOA",
+    "value": [
+      "ns1.garza-harris.com",
+      "admin.garza-harris.com"
+    ]
+  }
+]

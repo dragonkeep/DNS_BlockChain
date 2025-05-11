@@ -14,7 +14,7 @@ async function getBlockchainStatus() {
     error.value = '';
     
     // 获取DNS区块链状态
-    const dnsResponse = await fetch('/chain');
+    const dnsResponse = await fetch('/nodes/chain?type=dns');
     const dnsData = await dnsResponse.json();
     
     if (dnsResponse.ok) {
@@ -22,7 +22,7 @@ async function getBlockchainStatus() {
     }
     
     // 获取注册区块链状态
-    const registerResponse = await fetch('/register_chain');
+    const registerResponse = await fetch('/nodes/chain?type=register');
     const registerData = await registerResponse.json();
     
     if (registerResponse.ok) {

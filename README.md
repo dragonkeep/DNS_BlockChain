@@ -1,24 +1,31 @@
-# 区块链DNS系统
+# 🌐 DNS 区块链系统
+欢迎使用我们的 DNS 区块链系统！这个项目结合了区块链技术与 DNS 服务，提供去中心化的域名注册和解析功能。
 
-## 项目介绍
-区块链DNS系统是一个基于区块链技术的分布式域名系统，旨在提供安全、透明和去中心化的域名管理服务。
+## 📦 项目结构
+- api.py ：提供 API 接口，用于域名注册、DNS 记录添加等操作。
+- blockchain.py ：实现区块链的基本功能。
+- blockwallet.py ：管理钱包和代币。
+- dns.py ：处理 DNS 相关逻辑。
+- Vue/ ：前端代码，使用 Vue.js 构建。
+## 🚀 快速开始
+1. 克隆仓库 ：
+    git clone https://github.com/dragonkeep/DNS_BlockChain.git
+2. 安装依赖 ：
+   npm install 
+3. 启动服务 ：
+   npm run dev 
+   python server.py -p 5137
+## 🔑 功能
+- 域名注册 ：通过钱包地址注册域名。
+- DNS 记录管理 ：添加、删除和查询 DNS 记录。
+- 区块链浏览 ：查看区块链状态和交易记录。
+## 📄 UI展示
+![Home Page](./UI/Home.png)
+![Register Page](./UI/DNSRegister.png)
+![DNS Page](./UI/DNSResolve.png)
+![Blockchain Page](./UI/Blockchain.png)
+![Wallet Page](./UI/Wallet.png)
 
-## 系统功能
-- **域名注册**：用户可以在区块链上注册新的域名
-- **DNS记录管理**：管理域名的IP地址、端口和租约信息
-- **区块链状态查询**：查看区块链的当前状态，包括区块数量和交易信息
 
-## 安装步骤
-1. 克隆本仓库
-2. 安装依赖：`npm install`
-3. 启动开发服务器：`npm run dev`
-
-## 使用指南
-1. 访问系统首页
-2. 注册新域名或管理现有域名
-3. 查询域名信息或查看区块链状态
-
-## 技术架构
-- **前端**：Vue.js
-- **后端**：Node.js
-- **区块链**：自定义区块链实现
+## 🤝 贡献
+感谢使用我们的 DNS 区块链系统！希望您喜欢这个项目。

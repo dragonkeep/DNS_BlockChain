@@ -10,7 +10,6 @@
     </div>
     
     <div class="features-section">
-      <h2>系统功能</h2>
       
       <div class="feature-grid">
         <div class="feature-card">
@@ -26,7 +25,12 @@
           <p>查询已注册域名的IP地址、端口和租约信息</p>
           <router-link to="/dns" class="feature-link">立即查询</router-link>
         </div>
-        
+        <div class="feature-card">
+          <div class="feature-icon">🪙</div>
+          <h3>钱包管理</h3>
+          <p>管理您的区块链钱包，进行转账和支付</p>
+          <router-link to="/wallet" class="feature-link">管理钱包</router-link>
+        </div>
         <div class="feature-card">
           <div class="feature-icon">⛓️</div>
           <h3>区块链状态</h3>

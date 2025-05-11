@@ -17,27 +17,40 @@ export function setupApiInterceptor() {
     try {
       // 根据URL路径和方法模拟不同的API响应
       let responseData;
-      
+      const urlPath = new URL(url, window.location.origin).pathname;
       // DNS解析API
       if (url.match(/\/dns\/resolve\/.+/)) {
         const hostname = url.split('/').pop() || '';
         responseData = await mockApi.resolveDomain(hostname);
       }
       // 域名注册API
-      else if (url === '/dns/register' && method === 'POST') {
+      else if (urlPath === '/dns/register' && method === 'POST') {
         responseData = await mockApi.registerDomain(body);
       }
       // 添加DNS记录API
-      else if (url === '/dns/new' && method === 'POST') {
+      else if (urlPath === '/dns/new' && method === 'POST') {
         responseData = await mockApi.addDnsRecord(body);
       }
       // 获取DNS区块链状态
-      else if (url === '/chain') {
+      else if (urlPath === '/nodes/chain' && url.includes('type=dns')) {
         responseData = await mockApi.getBlockchainStatus();
       }
       // 获取注册区块链状态
-      else if (url === '/register_chain') {
+      else if (urlPath === '/nodes/chain' && url.includes('type=register')) {
         responseData = await mockApi.getRegisterBlockchainStatus();
+      }
+      // 创建钱包
+      else if (urlPath === '/wallet/create' && method === 'POST') {
+        responseData = await mockApi.createWallet();
+      }
+      // 导入钱包
+      else if (urlPath === '/wallet/import' && method === 'POST') {
+        responseData = await mockApi.importWallet(body);
+      }
+      // 获取钱包信息
+      else if (url.match(/\/wallet\/info\/.+/)) {
+        const address = url.split('/').pop() || '';
+        responseData = await mockApi.getWalletInfo(address);
       }
       // 未知API，返回404
       else {

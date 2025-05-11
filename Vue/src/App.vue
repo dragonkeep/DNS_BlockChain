@@ -17,6 +17,8 @@ const error = ref('');
         <RouterLink to="/register" class="nav-link">域名管理</RouterLink>
         <RouterLink to="/dns" class="nav-link">域名查询</RouterLink>
         <RouterLink to="/blockchain" class="nav-link">区块链状态</RouterLink>
+        <RouterLink to="/wallet" class="nav-link">钱包管理</RouterLink>
+        <RouterLink to="/about" class="nav-link">关于</RouterLink>
       </nav>
     </header>
     
