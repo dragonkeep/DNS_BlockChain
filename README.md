@@ -25,7 +25,7 @@
 ![DNS Page](./UI/DNSResolve.png)
 ![Blockchain Page](./UI/Blockchain.png)
 ![Wallet Page](./UI/Wallet.png)
-
+![About Page](./UI/About.png)
 
 ## 🤝 贡献
 感谢使用我们的 DNS 区块链系统！希望您喜欢这个项目。
