@@ -11,38 +11,38 @@ import json
 import requests
 
 class Blockchain(object):
-	def __init__(self,node_identifier):
+	def __init__(self, wallet_address):
 		"""
-		Initializes the class
-
-		Current_transactions is the buffer for new transactions
-		before a new block is created
-
-		Chain is the chain of blocks (ledger) storing all data
-
-		Nodes is a set keeping track of all the other nodes.
-		This is required since we need to broadcast information to other nodes
+		初始化区块链类
+		
+		Current_transactions 是新交易的缓冲区，在创建新区块前存储
+		Chain 是区块链（账本），存储所有数据
+		Nodes 是一个集合，跟踪所有其他节点
+		这是必需的，因为我们需要向其他节点广播信息
+		
+		:param wallet_address: 钱包地址，作为节点的唯一标识符
 		"""
 		self.current_transactions = []
 		self.chain = []
 		self.nodes = set()
-		self.node_identifier = node_identifier
+		self.wallet_address = wallet_address  # 使用钱包地址替代node_identifier
+		self.transaction_counter = 0  # 添加交易计数器
 
 		# 加载持久化区块链数据
 		self.chain_file = "data/blockchain.json"
 		self.load_chain()
 
 		if not self.chain:
-			# create the genesis block
-			# this is a hardcoded block which serves as the first block
-			# it contains no data
+			# 创建创世区块
+			# 这是一个硬编码的区块，作为第一个区块
+			# 它不包含任何数据
 			self.new_block(previous_hash = '1', proof=100)
 
 	def register_node(self, address):
 		"""
-		Add a new node to the list of nodes
-
-		:param address: Address of new node in network.
+		添加新节点到节点列表
+		
+		:param address: 网络中新节点的地址
 		"""
 		# print(address)
 		# parsed_url = urlparse(address)
@@ -53,16 +53,16 @@ class Blockchain(object):
 	@property
 	def quota(self):
 		"""
-		Go through the chain and calculate the quota (publish cash) we have
-		Cash is recorded with a special type of transaction
+		遍历链并计算我们拥有的配额（发布现金）
+		现金通过特殊类型的交易记录
 		"""
 		chain = self.chain
 		quota = 10
 
 		for block in chain:
-			own_block = (block['source']==self.node_identifier)
+			own_block = (block['source'] == self.wallet_address)  # 使用钱包地址
 			for transaction in block['transactions']:
-				if 'node' in transaction and transaction['node']==self.node_identifier:
+				if 'wallet' in transaction and transaction['wallet'] == self.wallet_address:  # 使用钱包地址
 					quota += transaction['reward']
 				elif own_block:
 					quota -= 1
@@ -71,41 +71,44 @@ class Blockchain(object):
 	@property
 	def last_block(self):
 		"""
-		A property method to return the trailing block in the chain
+		属性方法，返回链中的尾部区块
 		"""
+		if not self.chain:
+			# 如果链为空，先创建创世区块
+			self.new_block(previous_hash='1', proof=100)
+			print(f"在last_block属性中创建创世区块完成")
 		return self.chain[-1]
 
 	@property
 	def buffered_transaction(self):
 		"""
-		A property method to return a list of buffered transactions that
-		are not yet written into blocks
+		属性方法，返回尚未写入区块的缓冲交易列表
 		"""
 		return self.current_transactions
 
 	@staticmethod
 	def hash(block):
 		"""
-		Creates a SHA-256 hash of a Block
-
-		:param block: Block
+		创建区块的SHA-256哈希
+		
+		:param block: 区块
 		"""
 
-		# sort the dictionary to assert the hash is consistent
+		# 对字典进行排序以确保哈希一致
 		block_string = json.dumps(block, sort_keys=True).encode()
 		return hashlib.sha256(block_string).hexdigest()
 
 	@staticmethod
 	def valid_proof(last_proof,proof):
 		"""
-		Validates the Proof
-		In our scenario, there is no need of incentive to create new block
-		Therefore, POW should be easy to satisfy
-		We use prefix=="00" as criteria
-
-		:param last_proof: Previous Proof
-		:param proof: Current Proof
-		:return: True if correct, False if not.
+		验证工作量证明
+		在我们的场景中，不需要创建新区块的激励
+		因此，POW应该容易满足
+		我们使用前缀=="00"作为标准
+		
+		:param last_proof: 前一个证明
+		:param proof: 当前证明
+		:return: 如果正确则为True，否则为False
 		"""
 		guess = f'{last_proof}{proof}'.encode()
 		guess_hash = hashlib.sha256(guess).hexdigest()
@@ -118,32 +121,46 @@ class Blockchain(object):
 			yield num
 			num += 1
 			if num%100 == 0:
-				print("Generating salt...")
+				print("生成盐值...")
 
 	def proof_of_work(self, last_proof):
 		"""
-		A proof of work algo. Iterate over different values of salt
-		See which salt satisfies valid_proof
+		工作量证明算法。迭代不同的盐值
+		查看哪个盐值满足valid_proof
 		"""
 		salt_gen = self.salt_generator()
 		salt = next(salt_gen)
 		while not self.valid_proof(last_proof,salt):
 			salt = next(salt_gen)
-		print("POW generated")
+		print("POW已生成")
 		return salt
 
 	def new_transaction(self,transaction):
 		"""
-		Creates a new transaction to go into the next mined Block
-		For flexibility, we do not define the format of transactions here
-
-		:param transaction: the new transaction we are appending
-		:return: The index of the Block that will hold this transaction
-		UPDATE
-		:return: The number of transactions in current_transaction
+		创建新交易，将进入下一个挖掘的区块
+		为了灵活性，我们不在这里定义交易的格式
+		
+		:param transaction: 我们正在添加的新交易
+		:return: 当前交易缓冲区中的交易数量
 		"""
 		self.current_transactions.append(transaction)
-		# return self.last_block['index']+1
+		self.transaction_counter += 1  # 增加交易计数
+		
+		# 当交易数达到10条时，自动出块
+		if self.transaction_counter >= 10:
+			# 检查区块链是否为空，如果为空则先创建创世区块
+			if not self.chain:
+				self.new_block(previous_hash='1', proof=100)
+				print(f"创建创世区块完成")
+			
+			last_block = self.chain[-1]  # 直接访问最后一个区块，避免使用last_block属性
+			last_proof = last_block['proof']
+			proof = self.proof_of_work(last_proof)
+			previous_hash = self.hash(last_block)
+			self.new_block(proof, previous_hash)
+			self.transaction_counter = 0  # 重置计数器
+			print(f"自动出块完成，区块链文件：{self.chain_file}")
+		
 		return len(self.current_transactions)
 
 	def save_chain(self):
@@ -182,22 +199,26 @@ class Blockchain(object):
 
 	def new_block(self,proof,previous_hash):
 		"""
-		Create a new Block in the Blockchain
-
-		:param proof: The proof given by the Proof of Work algorithm
-		:param previous_hash: Hash of previous Block
-		:return: New Block
+		在区块链中创建新区块
+		
+		:param proof: 工作量证明算法给出的证明
+		:param previous_hash: 前一个区块的哈希
+		:return: 新区块
 		"""
+		# 处理previous_hash，确保在链为空时不会尝试访问self.chain[-1]
+		if previous_hash is None and len(self.chain) > 0:
+			previous_hash = self.hash(self.chain[-1])
+			
 		block = {
 			'index': len(self.chain) + 1,
-			'source': self.node_identifier,
+			'source': self.wallet_address,  # 使用钱包地址
 			'timestamp': time(),
 			'transactions': self.current_transactions,
 			'proof': proof,
-			'previous_hash': previous_hash or self.hash(self.chain[-1]),
+			'previous_hash': previous_hash,
 		}
 
-		# Reset the current list of transactions
+		# 重置当前交易列表
 		self.current_transactions = []
 
 		self.chain.append(block)
@@ -206,19 +227,18 @@ class Blockchain(object):
 
 	def resolve_conflicts(self):
 		"""
-		This is our consensus algorithm, it resolves conflicts
-		by replacing our chain with the longest one in the network.
-
-		:return: True if our chain was replaced, False if not
+		这是我们的共识算法，它通过用网络中最长的链替换我们的链来解决冲突
+		
+		:return: 如果我们的链被替换则为True，否则为False
 		"""
 
 		neighbours = self.nodes
 		new_chain = None
 
-		# We're only looking for chains longer than ours
+		# 我们只寻找比我们更长的链
 		max_length = len(self.chain)
 
-		# Grab and verify the chains from all the nodes in our network
+		# 从网络中的所有节点获取并验证链
 		for node in neighbours:
 			node_addr = f'http://{node}/nodes/chain'
 			# print(node_addr)
@@ -228,12 +248,12 @@ class Blockchain(object):
 				length = response.json()['length']
 				chain = response.json()['chain']
 
-				# Check if the length is longer and the chain is valid
+				# 检查长度是否更长且链是否有效
 				if length > max_length and self.valid_chain(chain):
 					max_length = length
 					new_chain = chain
 
-		# Replace our chain if we discovered a new, valid chain longer than ours
+		# 如果我们发现了一个新的、有效的、比我们更长的链，则替换我们的链
 		if new_chain:
 			self.chain = new_chain
 			return True
@@ -243,10 +263,10 @@ class Blockchain(object):
 	@classmethod
 	def valid_chain(cls,chain):
 		"""
-		Determine if a given blockchain is valid
-
-		:param chain: A blockchain
-		:return: True if valid, False if not
+		确定给定的区块链是否有效
+		
+		:param chain: 区块链
+		:return: 如果有效则为True，否则为False
 		"""
 
 		last_block = chain[0]
@@ -257,11 +277,11 @@ class Blockchain(object):
 			print(f'{last_block}')
 			print(f'{block}')
 			print("\n-----------\n")
-			# Check that the hash of the block is correct
+			# 检查区块的哈希是否正确
 			if block['previous_hash'] != cls.hash(last_block):
 				return False
 
-			# Check that the Proof of Work is correct
+			# 检查工作量证明是否正确
 			if not cls.valid_proof(last_block['proof'], block['proof']):
 				return False
 

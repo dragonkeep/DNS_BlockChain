@@ -220,7 +220,6 @@ function submitRegisterDomain() {
 }
 </script>
 
-<!-- 保留现有的模板部分 -->
 <template>
   <div class="wallet-view">
     <h1>区块链钱包管理</h1>
@@ -244,7 +243,7 @@ function submitRegisterDomain() {
         @click="setActiveTab('domains')"
         :disabled="!isWalletLoaded"
       >
-        子域名管理
+        域名管理
       </button>
     </div>
     
@@ -340,7 +339,7 @@ function submitRegisterDomain() {
         
         <!-- 注册域名表单 -->
         <div v-if="showRegisterForm" class="register-form">
-          <h3>注册新域名</h3>
+          <h3>注册子域名</h3>
           <div class="form-group">
             <label for="domain-name">域名:</label>
             <input 
