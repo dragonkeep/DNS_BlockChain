@@ -1,6 +1,6 @@
 // 区块链DNS API服务
 
-const API_BASE_URL = 'http://127.0.0.1:5173';
+const API_BASE_URL = 'http://127.0.0.1:5000';
 // API函数
 export const mockApi = {
   // 查询域名 - 使用XMLHttpRequest避免循环调用

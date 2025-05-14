@@ -2,6 +2,7 @@
 import { ref, onMounted, computed } from 'vue';
 import { useRoute } from 'vue-router';
 import { mockApi } from '../services/mockApi';
+import { walletService } from '../services/walletService';
 
 // 获取路由参数
 const route = useRoute();
@@ -60,13 +61,24 @@ function setActiveTab(tab:any) {
 }
 
 // 检查钱包连接状态
-function checkWalletConnection() {
+async function checkWalletConnection() {
   const savedAddress = localStorage.getItem('walletAddress');
   if (savedAddress) {
     walletAddress.value = savedAddress;
-    isWalletConnected.value = true;
-    return true;
+    
+    // 验证后端钱包状态
+    try {
+      const statusData = await walletService.checkWalletStatus();
+      console.log('钱包状态检查结果:', statusData); // 添加日志以便调试
+      isWalletConnected.value = statusData.connected;
+      return statusData.connected;
+    } catch (err) {
+      console.error('检查后端钱包状态失败:', err);
+      isWalletConnected.value = false;
+      return false;
+    }
   }
+  isWalletConnected.value = false;
   return false;
 }
 
@@ -81,8 +93,11 @@ async function registerDomain() {
       return;
     }
     
-    // 检查钱包是否已连接
-    if (!checkWalletConnection()) {
+    // 重新检查钱包连接状态，确保最新状态
+    const connected = await checkWalletConnection();
+    console.log('注册域名前钱包连接状态:', connected);
+    
+    if (!connected) {
       error.value = '请先连接钱包';
       return;
     }
@@ -117,8 +132,11 @@ async function addDnsRecord() {
       return;
     }
     
-    // 检查钱包是否已连接
-    if (!checkWalletConnection()) {
+    // 重新检查钱包连接状态，确保最新状态
+    const connected = await checkWalletConnection();
+    console.log('添加DNS记录前钱包连接状态:', connected);
+    
+    if (!connected) {
       error.value = '请先连接钱包';
       return;
     }
@@ -156,15 +174,21 @@ async function addDnsRecord() {
 }
 
 // 页面加载时检查钱包连接状态和预填充域名
-onMounted(() => {
-  // 检查钱包连接状态
-  checkWalletConnection();
-  
-  // 检查URL参数是否有编辑域名
-  const editDomain = route.query.edit;
-  if (editDomain && typeof editDomain === 'string') {
-    hostname.value = editDomain;
-    activeTab.value = 'add'; // 切换到添加DNS记录标签页
+onMounted(async () => {
+  try {
+    // 异步检查钱包连接状态
+    const connected = await checkWalletConnection();
+    console.log('钱包连接状态:', connected, '钱包地址:', walletAddress.value);
+    
+    // 检查URL参数是否有编辑域名
+    const editDomain = route.query.edit;
+    if (editDomain && typeof editDomain === 'string') {
+      hostname.value = editDomain;
+      activeTab.value = 'add'; // 切换到添加DNS记录标签页
+    }
+  } catch (err) {
+    console.error('初始化钱包连接状态失败:', err);
+    error.value = '钱包连接检查失败';
   }
 });
 </script>

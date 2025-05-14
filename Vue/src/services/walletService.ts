@@ -3,13 +3,24 @@ import { ref } from 'vue';
 import axios from 'axios';
 
 // API基础URL
-const API_BASE_URL = 'http://127.0.0.1:5173';
+const API_BASE_URL = 'http://127.0.0.1:5000';
 
 // 存储钱包数据的响应式引用
 export const wallets = ref([]);
 
 // 钱包服务
 export const walletService = {
+  // 检查钱包状态
+  async checkWalletStatus() {
+    try {
+      const response = await axios.get(`${API_BASE_URL}/wallet/status`);
+      return response.data;
+    } catch (error) {
+      console.error('检查钱包状态失败:', error);
+      return { connected: false, message: '无法连接到服务器' };
+    }
+  },
+  
   // 创建新钱包
   async createWallet() {
     try {

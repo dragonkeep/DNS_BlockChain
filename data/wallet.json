@@ -1,0 +1,30 @@
+[
+  {
+    "address": "",
+    "balance": 0
+  },
+  {
+    "address": "DCc7a9a5508fba520dff22e491a41fb02571563077",
+    "balance": 0
+  },
+  {
+    "address": "DCf0bf4e218da1db78a3618db6a45810e75f0fd70a",
+    "balance": 0
+  },
+  {
+    "address": "DCad185a1dc6ffe64ed322ffbad1d7e9a08e8ff61d",
+    "balance": 10
+  },
+  {
+    "address": "DC3de76ec99539797da93c5a211716025d28895247",
+    "balance": 10
+  },
+  {
+    "address": "DC07b9fa0f0bcf0bdadc6006d570f3e1c68bb2c0d2",
+    "balance": 4.0
+  },
+  {
+    "address": "DC7e36fc897e51eb891fb46173fa75f388af2d39c9",
+    "balance": 11.0
+  }
+]

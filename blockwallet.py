@@ -96,34 +96,52 @@ class Wallet:
     
     def get_balance(self) -> float:
         """
-        获取钱包余额，从区块链上查询
+        获取钱包余额，从本地钱包文件查询
         
         Returns:
             钱包余额
         """
-        # 从区块链上查询余额
+        wallet_file = os.path.join(self.data_dir, "wallet.json")
         try:
-            # 初始化DNS解析器以获取区块链实例
-            dns_resolver = dns_layer(node_identifier=self.node_identifier)
-            
-            # 获取代币余额
-            balance = dns_resolver.get_user_tokens(self.address)
-            return float(balance)
+            with open(wallet_file, 'r') as f:
+                wallets = json.load(f)
+                # 遍历钱包列表查找匹配地址
+                for wallet in wallets:
+                    if wallet.get("address") == self.address:
+                        return float(wallet.get("balance", 10.0))
+                # 地址不存在时返回默认余额
+                return 10.0
         except Exception as e:
-            print(f"从区块链获取余额失败: {str(e)}")
-            # 如果查询失败，尝试从本地文件获取
-            balance_file = os.path.join(self.data_dir, "balances.json")
-            
-            if os.path.exists(balance_file):
-                try:
-                    with open(balance_file, 'r') as f:
-                        balances = json.load(f)
-                        return balances.get(self.address, 10.0)  # 默认余额为10
-                except Exception:
-                    pass
-                    
-            return 10.0  # 默认余额
-        
+            print(f"从本地钱包文件获取余额失败: {str(e)}")
+            return 10.0  # 异常时返回默认余额
+    def add_balance(self, amount: float):
+        """
+        为钱包添加余额，更新本地钱包文件
+
+        Args:
+            amount: 要添加的余额
+        """
+        wallet_file = os.path.join(self.data_dir, "wallet.json")
+        try:
+            with open(wallet_file, 'r') as f:
+                wallets = json.load(f)
+            # 遍历钱包列表查找匹配地址
+            for wallet in wallets:
+                if wallet.get("address") == self.address:
+                    wallet["balance"] = float(wallet.get("balance", 0.0)) + amount
+                    break
+            else:
+                # 地址不存在时新增
+                wallets.append({
+                    "address": self.address,
+                    "balance": amount
+                })
+            # 保存钱包文件
+            with open(wallet_file, 'w') as f:
+                json.dump(wallets, f, indent=2)
+        except Exception as e:
+            print(f"更新本地钱包文件失败: {str(e)}")
+
     def get_domains(self) -> List[Dict]:
         """
         获取钱包拥有的域名列表，从区块链上查询

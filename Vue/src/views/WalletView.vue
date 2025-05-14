@@ -38,6 +38,16 @@ async function createWallet() {
     // 保存钱包地址到本地存储
     localStorage.setItem('walletAddress', walletAddress.value);
     
+    // 验证后端钱包状态
+    try {
+      const statusData = await walletService.checkWalletStatus();
+      if (!statusData.connected) {
+        console.warn('警告：前端钱包已创建，但后端钱包状态未同步');
+      }
+    } catch (err) {
+      console.error('检查后端钱包状态失败:', err);
+    }
+    
     // 获取钱包信息
     getWalletInfo();
   } catch (err) {
@@ -69,6 +79,16 @@ async function importWallet() {
     
     // 保存钱包地址到本地存储
     localStorage.setItem('walletAddress', walletAddress.value);
+    
+    // 验证后端钱包状态
+    try {
+      const statusData = await walletService.checkWalletStatus();
+      if (!statusData.connected) {
+        console.warn('警告：前端钱包已导入，但后端钱包状态未同步');
+      }
+    } catch (err) {
+      console.error('检查后端钱包状态失败:', err);
+    }
     
     // 获取钱包信息
     getWalletInfo();
@@ -164,8 +184,24 @@ function getRemainingDays(timestamp:any) {
   return Math.max(0, Math.floor(remainingSeconds / 86400)); // 86400秒 = 1天
 }
 
-// 页面加载时检查是否有保存的钱包地址
-onMounted(() => {
+// 页面加载时检查是否有保存的钱包地址，并验证后端钱包状态
+onMounted(async () => {
+  // 首先检查后端钱包状态
+  try {
+    const statusData = await walletService.checkWalletStatus();
+    if (statusData.connected) {
+      // 如果后端已连接钱包，使用后端的钱包地址
+      walletAddress.value = statusData.address;
+      isWalletLoaded.value = true;
+      getWalletInfo();
+      console.log('已从后端恢复钱包状态:', statusData.address);
+      return;
+    }
+  } catch (err) {
+    console.error('检查后端钱包状态失败:', err);
+  }
+  
+  // 如果后端未连接钱包，尝试从本地存储恢复
   const savedAddress = localStorage.getItem('walletAddress');
   if (savedAddress) {
     walletAddress.value = savedAddress;
@@ -243,7 +279,7 @@ function submitRegisterDomain() {
         @click="setActiveTab('domains')"
         :disabled="!isWalletLoaded"
       >
-        域名管理
+        子域名管理
       </button>
     </div>
     
@@ -333,7 +369,7 @@ function submitRegisterDomain() {
         <div class="domains-header">
           <h2>我的域名</h2>
           <button @click="toggleRegisterForm" class="btn-primary">
-            {{ showRegisterForm ? '取消' : '注册新域名' }}
+            {{ showRegisterForm ? '取消' : '注册子域名' }}
           </button>
         </div>
         
