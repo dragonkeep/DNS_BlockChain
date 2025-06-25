@@ -19,9 +19,8 @@ export function setupApiInterceptor() {
       let responseData;
       const urlPath = new URL(url, window.location.origin).pathname;
       // DNS解析API
-      if (url.match(/\/dns\/resolve\/.+/)) {
-        const hostname = url.split('/').pop() || '';
-        responseData = await mockApi.resolveDomain(hostname);
+      if (urlPath === '/dns/request' && method === 'POST') {
+        responseData = await mockApi.resolveDomain(body.hostname);
       }
       // 域名注册API
       else if (urlPath === '/dns/register' && method === 'POST') {
@@ -65,10 +64,9 @@ export function setupApiInterceptor() {
         status: 200,
         headers: { 'Content-Type': 'application/json' }
       });
-    } catch (error) {
-      // 返回错误响应
-      return new Response(JSON.stringify({ error: error.message }), {
-        status: 400,
+    } catch (error: any) {
+      return new Response(JSON.stringify({ error: error?.message || '未知错误' }), {
+        status: 500,
         headers: { 'Content-Type': 'application/json' }
       });
     }

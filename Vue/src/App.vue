@@ -1,16 +1,80 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-import { RouterLink, RouterView } from 'vue-router';
+import { RouterLink, RouterView, useRouter } from 'vue-router';
+import UserAuth from './components/UserAuth.vue';
+import { walletService } from './services/walletService';
 
 // 定义状态变量
 const message = ref('');
 const error = ref('');
+
+// 清除提示信息
+function clearMessage() {
+  setTimeout(() => {
+    message.value = '';
+    error.value = '';
+  }, 2000);
+}
+
+// 处理登录成功
+const onLoginSuccess = () => {
+  // 登录成功后强制刷新整个页面，确保所有状态和数据都更新
+  window.location.href = '/wallet';
+};
+
+// 处理登出
+const onLogout = () => {
+  // 退出登录后强制刷新页面并跳转到首页
+  window.location.href = '/';
+};
+
+// 处理钱包绑定事件
+const handleWalletBind = (walletAddress: string) => {
+  message.value = `钱包已绑定: ${walletAddress}`;
+  clearMessage();
+};
+
+// 处理钱包解绑事件
+const handleWalletUnbind = async () => {
+  try {
+    // 调用钱包服务清除钱包信息
+    await walletService.clearWalletInfo();
+    
+    // 清除本地存储的钱包信息
+    localStorage.removeItem('walletAddress');
+    message.value = '钱包已解绑';
+    clearMessage();
+  } catch (err) {
+    error.value = '钱包解绑失败';
+    clearMessage();
+    console.error('钱包解绑失败:', err);
+    
+    // 即使API调用失败，也尝试清除本地存储
+    localStorage.removeItem('walletAddress');
+  }
+};
+
+const router = useRouter();
+
+// 登录成功处理函数
+// function onLoginSuccess() {
+//   // 登录成功后刷新当前页面或跳转到钱包管理
+//   router.push('/wallet');
+// }
 </script>
 
 <template>
   <div class="container">
     <header class="header">
-      <h1>区块链DNS系统</h1>
+      <div class="header-content">
+        <h1>区块链DNS系统</h1>
+        <UserAuth
+          @wallet-bind="handleWalletBind"
+          @wallet-unbind="handleWalletUnbind"
+          @login-success="onLoginSuccess"
+          @logout="onLogout"
+        />
+      </div>
       
       <nav class="main-nav">
         <RouterLink to="/" class="nav-link">首页</RouterLink>
@@ -54,6 +118,11 @@ const error = ref('');
   margin-bottom: 20px;
   border-bottom: 1px solid #eaeaea;
   padding-bottom: 15px;
+}
+
+.header-content {
+  position: relative;
+  padding: 0 20px;
 }
 
 h1 {

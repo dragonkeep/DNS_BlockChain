@@ -1,9 +1,20 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 
+// 定义类型
+interface QueryResult {
+  hostname?: string;
+  ip?: string;
+  port?: string | number;
+  lease_expiry?: number;
+  blockchain_type?: string;
+  on_chain?: boolean;
+  message?: string;
+}
+
 // 定义状态变量
 const hostname = ref('');
-const queryResult = ref(null);
+const queryResult = ref<QueryResult | null>(null);
 const error = ref('');
 
 // 查询域名信息
@@ -17,11 +28,16 @@ async function queryDomain() {
       return;
     }
     
-    const response = await fetch(`/dns/resolve/${hostname.value}`);
+    // 适配后端接口
+    const response = await fetch('/dns/request', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ hostname: hostname.value })
+    });
     const data = await response.json();
     
     if (response.ok) {
-      queryResult.value = data;
+      queryResult.value = { ...data, hostname: hostname.value };
     } else {
       error.value = data.error || '查询失败';
     }
@@ -35,7 +51,6 @@ async function queryDomain() {
 <template>
   <div class="dns-view">
     <h1>DNS解析</h1>
-    
     <div class="query-form">
       <h2>域名查询</h2>
       <form @submit.prevent="queryDomain">
@@ -49,10 +64,8 @@ async function queryDomain() {
             required
           >
         </div>
-        
         <button type="submit" class="btn-primary">查询</button>
       </form>
-      
       <div v-if="queryResult" class="result">
         <h3>查询结果:</h3>
         <div class="result-item">
@@ -70,8 +83,14 @@ async function queryDomain() {
         <div class="result-item" v-if="queryResult.blockchain_type">
           <strong>区块链类型:</strong> {{ queryResult.blockchain_type }}
         </div>
+        <div v-if="queryResult && (queryResult.on_chain === false || queryResult.on_chain === 'false')">
+          <strong style="color: #e67e22">[未上链]</strong>
+          <span>{{ queryResult.message || '该DNS记录未上链' }}</span>
+        </div>
+        <div v-else-if="queryResult && queryResult.error">
+          <span style="color: #e74c3c">{{ queryResult.error }}</span>
+        </div>
       </div>
-      
       <div v-if="error" class="message error">{{ error }}</div>
     </div>
   </div>

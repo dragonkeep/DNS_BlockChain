@@ -54,5 +54,20 @@ export const walletService = {
       console.error('获取钱包信息失败:', error);
       throw new Error('获取钱包信息失败');
     }
+  },
+  
+  // 清除钱包信息
+  async clearWalletInfo() {
+    try {
+      // 通知后端断开钱包连接
+      await axios.post(`${API_BASE_URL}/wallet/disconnect`);
+      // 清除前端存储的钱包数据
+      wallets.value = [];
+      localStorage.removeItem('walletAddress');
+      return { success: true, message: '钱包信息已清除' };
+    } catch (error) {
+      console.error('清除钱包信息失败:', error);
+      throw new Error('清除钱包信息失败');
+    }
   }
 };

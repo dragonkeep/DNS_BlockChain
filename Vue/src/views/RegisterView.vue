@@ -88,7 +88,7 @@ async function registerDomain() {
     error.value = '';
     message.value = '';
     
-    if (!hostname.value || !ip.value || !port.value) {
+    if (!hostname.value) {
       error.value = '请填写所有必填字段';
       return;
     }
@@ -245,30 +245,10 @@ onMounted(async () => {
             >
           </div>
           
-          <div class="form-group">
-            <label for="ip">IP地址:</label>
-            <input 
-              type="text" 
-              id="ip" 
-              v-model="ip" 
-              placeholder="127.0.0.1"
-              required
-            >
-          </div>
+      
           
           <div class="form-group">
-            <label for="port">端口:</label>
-            <input 
-              type="number" 
-              id="port" 
-              v-model="port" 
-              placeholder="80"
-              required
-            >
-          </div>
-          
-          <div class="form-group">
-            <label for="lease">租赁年限:</label>
+            <label for="lease">租赁年限 (2DC/1年):</label>
             <input 
               type="number" 
               id="lease" 

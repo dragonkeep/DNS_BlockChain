@@ -165,16 +165,26 @@ class Blockchain(object):
 
 	def save_chain(self):
 		"""
-		保存区块链数据到文件
+		保存区块链数据到文件，采用追加模式（a+），不覆盖原有内容
 		"""
 		try:
 			import os
 			data_dir = os.path.dirname(self.chain_file)
 			if not os.path.exists(data_dir):
 				os.makedirs(data_dir)
-			with open(self.chain_file, 'w') as f:
-				import json
-				json.dump(self.chain, f, indent=4)
+			# 先读取原有内容
+			chain_data = []
+			if os.path.exists(self.chain_file):
+				with open(self.chain_file, 'r', encoding='utf-8') as f:
+					content = f.read().strip()
+					if content:
+						chain_data = json.loads(content)
+			# 只追加新块
+			if len(chain_data) < len(self.chain):
+				new_blocks = self.chain[len(chain_data):]
+				chain_data.extend(new_blocks)
+				with open(self.chain_file, 'w', encoding='utf-8') as f:
+					json.dump(chain_data, f, indent=4, ensure_ascii=False)
 			print(f"成功保存区块链数据，共 {len(self.chain)} 个区块")
 		except Exception as e:
 			print(f"保存区块链数据失败: {e}")

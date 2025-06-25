@@ -1,5 +1,6 @@
 import blockchain as bc
 import requests
+import re
 import json
 import os
 from time import time
@@ -12,6 +13,11 @@ dns_transaction = {
 }
 """
 import atexit
+import threading
+import time as _time
+
+TMP_REGISTER_FILE = os.path.join('data', 'tmp_register.json')
+TMP_DOMAINS_FILE = os.path.join('data', 'tmp_domains.json')
 
 class dns_layer(object):
 	def __init__(self, node_identifier):
@@ -38,33 +44,86 @@ class dns_layer(object):
 		self.load_data()
 		# 注册退出时只保存一次数据
 		atexit.register(self.save_data)
+		self._dns_timer = None
+		self._start_dns_timer()
+		self._register_timer = None
+		self._start_register_timer()
 
-	def lookup(self,hostname):
+	def _start_dns_timer(self):
+		# 每分钟强制出块，将tmp_domains.json中的记录写入domains.json
+		def force_dns_block():
+			while True:
+				_time.sleep(60)
+				self.flush_tmp_domains()
+		t = threading.Thread(target=force_dns_block, daemon=True)
+		t.start()
+		self._dns_timer = t
+
+	def flush_tmp_domains(self):
+		if os.path.exists(TMP_DOMAINS_FILE):
+			with open(TMP_DOMAINS_FILE, 'r', encoding='utf-8') as f:
+				tmp_data = json.load(f)
+			if tmp_data:
+				for entry in tmp_data:
+					self.dns_blockchain.new_transaction(entry)
+				self.mine_dns_block()
+				with open(TMP_DOMAINS_FILE, 'w', encoding='utf-8') as f:
+					json.dump([], f)
+
+	def _start_register_timer(self):
+		# 每分钟强制出块，将tmp_register.json中的记录写入register.json
+		def force_register_block():
+			while True:
+				_time.sleep(60)
+				self.flush_tmp_register()
+		t = threading.Thread(target=force_register_block, daemon=True)
+		t.start()
+		self._register_timer = t
+
+	def flush_tmp_register(self):
+		if os.path.exists(TMP_REGISTER_FILE):
+			with open(TMP_REGISTER_FILE, 'r', encoding='utf-8') as f:
+				tmp_data = json.load(f)
+			if tmp_data:
+				for entry in tmp_data:
+					self.register_blockchain.new_transaction(entry)
+				self.mine_register_block()
+				with open(TMP_REGISTER_FILE, 'w', encoding='utf-8') as f:
+					json.dump([], f)
+
+	def lookup(self, hostname):
 		"""
-		直接从区块链中查找DNS记录
-
+		先从domains.json（区块链）查找DNS记录，查不到再查tmp_domains.json，查到则返回未上链标记
 		:param hostname: string, 要查找的目标主机名
-		:return: 一个元组 (ip,port)
+		:return: 一个元组 (ip,port, on_chain)
 		"""
-		# 先从注册区块链中查找
-		for block in self.register_blockchain.chain:
-			transactions = block['transactions']
-			for transaction in transactions:
-				if 'hostname' in transaction and transaction['hostname'] == hostname:
-					return (transaction['ip'], transaction['port'])
-		
-		# 如果在注册区块链中未找到，再从普通DNS区块链中查找
+		self.load_data()  # 每次查询前强制从文件加载最新链数据
+		# 先从DNS区块链中查找
 		for block in self.dns_blockchain.chain:
 			transactions = block['transactions']
 			for transaction in transactions:
 				if 'hostname' in transaction and transaction['hostname'] == hostname:
-					return (transaction['ip'], transaction['port'])
-					
+					return (transaction['ip'], transaction['port'], True)
+		# 再从注册区块链中查找
+		for block in self.register_blockchain.chain:
+			transactions = block['transactions']
+			for transaction in transactions:
+				if 'hostname' in transaction and transaction['hostname'] == hostname:
+					return (transaction['ip'], transaction['port'], True)
+		
+		
+		# 查tmp_domains.json
+		if os.path.exists(TMP_DOMAINS_FILE):
+			with open(TMP_DOMAINS_FILE, 'r', encoding='utf-8') as f:
+				tmp_data = json.load(f)
+			for entry in tmp_data:
+				if entry.get('hostname') == hostname:
+					return (entry.get('ip', ''), entry.get('port', ''), False)
 		raise LookupError('No existing entry matching hostname')
 
 	def mine_register_block(self):
 		"""
-		挖掘注册区块链的新区块
+		挖掘注册区块链的新区块，并自动同步到DNS区块链（domains.json）
 		"""
 		last_block = self.register_blockchain.last_block
 		last_proof = last_block['proof']
@@ -73,6 +132,21 @@ class dns_layer(object):
 		# Forge the new Block by adding it to the chain
 		previous_hash = self.register_blockchain.hash(last_block)
 		block = self.register_blockchain.new_block(proof, previous_hash)
+
+		# --- 跨链：将新上链的注册域名自动同步到DNS区块链 ---
+		for tx in block['transactions']:
+			if 'hostname' in tx and 'ip' in tx and 'port' in tx:
+				dns_tx = {
+					'hostname': tx['hostname'],
+					'ip': tx['ip'],
+					'port': tx['port'],
+					'node_id': tx.get('node_id', self.node_identifier),
+					'lease_years': tx.get('lease_years', 1)
+				}
+				self.dns_blockchain.new_transaction(dns_tx)
+		# 如果DNS缓冲区满则自动出块
+		if len(self.dns_blockchain.current_transactions) >= self.BUFFER_MAX_LEN:
+			self.mine_dns_block()
 
 		# broadcast request for all neighbor to resolve conflict
 		self.broadcast_new_block(blockchain_type='register')
@@ -155,6 +229,14 @@ class dns_layer(object):
 		:param node_id: string, 添加此条目的节点标识符
 		:return: bool, 如果条目添加成功则为True
 		"""
+		# 域名匹配
+		# hostname_pattern = r'^(?!-)[a-z0-9-]{1,63}(?<!-)(?:\.(?!-)[a-z0-9-]{1,63}(?<!-))*$'
+		# if not re.match(hostname_pattern, hostname):
+		# 	raise ValueError(f"域名格式不正确: {hostname}")
+		# # IP地址正则校验（IPv4）
+		# ip_pattern = r'^(25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d)){3}$'
+		# if not re.match(ip_pattern, str(ip)):
+		# 	raise ValueError(f"IP地址格式不正确: {ip}")
 		# 如果未指定node_id，使用当前节点标识符
 		if node_id is None:
 			node_id = self.node_identifier
@@ -173,19 +255,61 @@ class dns_layer(object):
 		
 		# 根据区块链类型选择添加到对应的区块链
 		if blockchain_type.lower() == 'dns':
-			# 添加到DNS区块链
-			print(blockchain_type)
-			buffer_len = self.dns_blockchain.new_transaction(new_transaction)
-			# 仅当缓冲区满时才挖掘新区块
-			if buffer_len >= self.BUFFER_MAX_LEN:
+			# 先写入tmp_domains.json
+			tmp_entry = {
+				'hostname': hostname,
+				'ip': ip,
+				'port': port,
+				'node_id': node_id,
+				'lease_years': lease_years
+			}
+			if os.path.exists(TMP_DOMAINS_FILE):
+				try:
+					with open(TMP_DOMAINS_FILE, 'r', encoding='utf-8') as f:
+						content = f.read().strip()
+						tmp_data = json.loads(content) if content else []
+				except Exception:
+					tmp_data = []
+			else:
+				tmp_data = []
+			tmp_data.append(tmp_entry)
+			with open(TMP_DOMAINS_FILE, 'w', encoding='utf-8') as f:
+				json.dump(tmp_data, f, ensure_ascii=False, indent=2)
+			# 满10条自动出块
+			if len(tmp_data) >= self.BUFFER_MAX_LEN:
+				for entry in tmp_data:
+					self.dns_blockchain.new_transaction(entry)
 				self.mine_dns_block()
+				with open(TMP_DOMAINS_FILE, 'w', encoding='utf-8') as f:
+					json.dump([], f)
 			return True
 		if blockchain_type.lower() == 'register':
-			# 默认添加到注册区块链
-			buffer_len = self.register_blockchain.new_transaction(new_transaction)
-			# 仅当缓冲区满时才挖掘新区块
-			if buffer_len >= self.BUFFER_MAX_LEN:
+			# 先写入tmp_register.json
+			tmp_entry = {
+				'hostname': hostname,
+				'ip': ip,
+				'port': port,
+				'node_id': node_id,
+				'lease_years': lease_years
+			}
+			# 读取临时文件
+			if os.path.exists(TMP_REGISTER_FILE):
+				with open(TMP_REGISTER_FILE, 'r', encoding='utf-8') as f:
+					tmp_data = json.load(f)
+			else:
+				tmp_data = []
+			tmp_data.append(tmp_entry)
+			# 写回临时文件
+			with open(TMP_REGISTER_FILE, 'w', encoding='utf-8') as f:
+				json.dump(tmp_data, f, ensure_ascii=False, indent=2)
+			# 如果达到10条，批量写入区块链
+			if len(tmp_data) >= self.BUFFER_MAX_LEN:
+				for entry in tmp_data:
+					self.register_blockchain.new_transaction(entry)
 				self.mine_register_block()
+				# 清空临时文件
+				with open(TMP_REGISTER_FILE, 'w', encoding='utf-8') as f:
+					json.dump([], f)
 			return True
 			
 	def dump_chain(self, blockchain_type='both'):
@@ -319,23 +443,26 @@ class dns_layer(object):
 		:param hostname: 要检查的域名
 		:return: 返回字典 {'exists': bool, 'expired': bool, 'blockchain_type': str}
 		"""
-		# 首先在注册区块链中查找域名（带有租赁信息）
+		# 先查tmp_register.json
+		if os.path.exists(TMP_REGISTER_FILE):
+			with open(TMP_REGISTER_FILE, 'r', encoding='utf-8') as f:
+				tmp_data = json.load(f)
+			for entry in tmp_data:
+				if entry.get('hostname') == hostname:
+					return {'exists': True, 'expired': False, 'blockchain_type': 'tmp', 'on_chain': False}
+		
+		# 原有区块链查找逻辑
 		for block in self.register_blockchain.chain:
 			for transaction in block['transactions']:
 				if 'hostname' in transaction and transaction['hostname'] == hostname:
-					# 检查租赁是否过期
 					current_time = time()
 					lease_end = block['timestamp'] + (transaction.get('lease_years', 1) * 31536000)
-					return {'exists': True, 'expired': current_time > lease_end, 'blockchain_type': 'register'}
-		
-		# 如果在注册区块链中未找到，再在普通DNS区块链中查找
+					return {'exists': True, 'expired': current_time > lease_end, 'blockchain_type': 'register', 'on_chain': True}
 		for block in self.dns_blockchain.chain:
 			for transaction in block['transactions']:
 				if 'hostname' in transaction and transaction['hostname'] == hostname:
-					# 普通DNS记录没有过期概念
-					return {'exists': True, 'expired': False, 'blockchain_type': 'dns'}
-					
-		return {'exists': False, 'expired': False, 'blockchain_type': None}
+					return {'exists': True, 'expired': False, 'blockchain_type': 'dns', 'on_chain': True}
+		return {'exists': False, 'expired': False, 'blockchain_type': None, 'on_chain': False}
 
 	def get_user_tokens(self, node_id):
 		"""
